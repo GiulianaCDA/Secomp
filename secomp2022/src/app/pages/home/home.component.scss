@@ -1,0 +1,23 @@
+.card{
+    border: 0 !important;
+    border-radius: 0!important;
+}
+
+.centering{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.header-homepage{
+    background-image: url("../../../assets/images/event.png");
+    height: 550px;
+    background-position: 0 80%;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-homepage-margintop{
+    margin-top: 10em;
+}
