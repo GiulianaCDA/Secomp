@@ -1,5 +1,8 @@
 .card{
     border: 0 !important;
+}
+
+.header-homepage .card{
     border-radius: 0!important;
 }
 
@@ -20,4 +23,26 @@
 
 .header-homepage-margintop{
     margin-top: 10em;
+}
+
+.header-title{
+    font-family: 'MuseoModerno', cursive;
+    font-size: 4em;
+}
+
+.homepage-info-card{
+    padding: 30px;
+    color: #545454;
+    font-weight: 400;
+    font-size: .95em; 
+    width: 65%;
+    margin-top: -6em;
+    box-shadow: 0.1em 0.4em 1em #d7d7d79e;
+}
+
+.card-info-title{
+    color: #3f00ff;
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: 600;
 }
