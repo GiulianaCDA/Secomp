@@ -1,20 +1,62 @@
-body{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+
+:root{
+    --text-yellow: #ffbb08;
 }
 
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #545454;
+    background-color: #f3f3f3;;
+}
+.card-title{
+    font-family: 'MuseoModerno';
+}
 .bg-purple{
     background-color: #5B15B6;
 }
-
 .bg-pink{
     background-color: #FF7E83;
 }
-
 .bg-yellow{
     background-color: #ffbb08;
 }
+.bg-purple{
+    background-color: #1156bb;
+}
+.text-yellow{
+    color: #ffbb08;
+}
+.text-purple{
+    color: #5B15B6;
+}
+.text-blue{
+    color: #1156bb;
+}
+.text-pink{
+    color: #FF7E83;
+}
+
 .header-title{
     font-weight: 800;
     font-size: 3em;
+}
+
+.spacing{
+    margin: 4em;
+}
+
+.btn-yellow{
+    background-color: #ffbb08;
+    border-color: #ffbb08;
+}
+
+.btn-pink{
+    background-color: #FF7E83;
+    border-color: #FF7E83;
+}
+
+.btn-purple{
+    background-color: #5B15B6;
+    border-color: #5B15B6;
 }
