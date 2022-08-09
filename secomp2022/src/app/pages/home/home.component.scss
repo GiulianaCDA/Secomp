@@ -13,7 +13,7 @@
 }
 
 .header-homepage{
-    background-image: url("../../../assets/images/event.png");
+    background-image: url("../../../assets/images/event.jpg");
     height: 550px;
     background-position: 0 80%;
     background-size: cover;
@@ -40,6 +40,12 @@
     box-shadow: 0.1em 0.4em 1em #d7d7d79e;
 }
 
+.secomp2019img{
+    width: 85%;
+    border-bottom-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+}
+
 .card-info-title{
     color: #3f00ff;
     font-size: .9em;
@@ -49,7 +55,7 @@
 
 section .card-title{
     font-weight: 800;
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 1em;
 }
 

@@ -7,7 +7,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #545454;
-    background-color: #f3f3f3;;
+    background-color: #f3f3f3;
 }
 .card-title{
     font-family: 'MuseoModerno';
@@ -50,6 +50,11 @@ body{
     background-color: #ffbb08;
     border-color: #ffbb08;
 }
+.btn-yellow:hover{
+    background-color: #e9a901;
+    border-color: #e9a901;
+}
+
 
 .btn-pink{
     background-color: #FF7E83;
