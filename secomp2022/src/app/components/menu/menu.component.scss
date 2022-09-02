@@ -9,3 +9,11 @@
     top: 0;
     left: 0;
 }
+
+.menu li a:hover{
+    color:  #66C0A1;
+}
+.nav-item-active{
+    border-bottom: solid 2px #66C0A1;
+
+}

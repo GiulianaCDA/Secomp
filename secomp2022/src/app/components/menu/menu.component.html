@@ -10,16 +10,47 @@
   
     <div class="collapse navbar-collapse text-uppercase" id="mobile-menu">
         <ul class="navbar-nav ml-auto menu">
-          <li class="nav-item px-2">
-            <a class="nav-link text-white" href="#">Início</a>
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{'nav-item-active': page === '/'}"
+          >
+            <a class="nav-link text-white" 
+            href="/">Início</a>
           </li>
-          <li class="nav-item px-2">
-            <a class="nav-link text-white" href="#">Inscrição</a>
+
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{'nav-item-active': page === '/inscricao'}"
+          >
+            <a 
+            class="nav-link text-white" 
+            href="#"
+            routerLink="/inscricao"
+            >
+            Inscrição
+            </a>
           </li>
-          <li class="nav-item px-2">
-            <a class="nav-link text-white" href="#">Minicursos</a>
+
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{
+            'nav-item-active': page === '/minicursos'
+          }"
+          >
+            <a 
+            class="nav-link text-white" 
+            href="#"
+            routerLink="/minicursos"
+            >Minicursos
+            </a>
           </li>
-          <li class="nav-item px-2">
+
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{
+            'nav-item-active': page === '/secompgames'
+          }"
+          >
             <a class="nav-link text-white" href="#">SecompGames</a>
           </li>
         </ul>

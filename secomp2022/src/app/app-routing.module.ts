@@ -4,6 +4,12 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'inscricao', component: HomeComponent },
+  { path: 'minicursos', component: HomeComponent },
+  { path: 'secompgames', component: HomeComponent },
+
+
+
 ];
 
 @NgModule({
