@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'inscricao', component: HomeComponent },
   { path: 'minicursos', component: HomeComponent },
-  { path: 'secompgames', component: HomeComponent },
+  { path: 'campeonato', component: HomeComponent },
+  { path: 'maratona', component: HomeComponent },
 
 
 

@@ -14,8 +14,9 @@
           class="nav-item px-2"
           [ngClass]="{'nav-item-active': page === '/'}"
           >
-            <a class="nav-link text-white" 
-            href="/">Início</a>
+            <a 
+            class="nav-link text-white" 
+            routerLink="/">Início</a>
           </li>
 
           <li 
@@ -24,7 +25,6 @@
           >
             <a 
             class="nav-link text-white" 
-            href="#"
             routerLink="/inscricao"
             >
             Inscrição
@@ -39,7 +39,6 @@
           >
             <a 
             class="nav-link text-white" 
-            href="#"
             routerLink="/minicursos"
             >Minicursos
             </a>
@@ -48,10 +47,27 @@
           <li 
           class="nav-item px-2"
           [ngClass]="{
-            'nav-item-active': page === '/secompgames'
+            'nav-item-active': page === '/campeonato'
           }"
           >
-            <a class="nav-link text-white" href="#">SecompGames</a>
+            <a 
+            class="nav-link text-white" 
+            routerLink="/campeonato"
+            >Campeonato
+            </a>
+          </li>
+
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{
+            'nav-item-active': page === '/maratona'
+          }"
+          >
+            <a 
+            class="nav-link text-white" 
+            routerLink="/maratona"
+            >Maratona de programação
+            </a>
           </li>
         </ul>
 
