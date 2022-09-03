@@ -5,7 +5,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     color: #545454;
     background-color: #f3f3f3;
 }
@@ -23,6 +23,9 @@ body{
 }
 .bg-blue{
     background-color: #1156bb;
+}
+.bg-green{
+    background-color: #66C0A1;
 }
 .text-yellow{
     color: #ffbb08;
@@ -55,13 +58,22 @@ body{
     border-color: #e9a901;
 }
 
-
 .btn-pink{
     background-color: #FF7E83;
     border-color: #FF7E83;
 }
 
 .btn-purple{
+    background-color: #5B15B6;
+    border-color: #5B15B6;
+}
+
+.btn-green{
+    background-color: #66C0A1;
+    border-color: #66C0A1
+}
+
+.btn-green:hover{
     background-color: #5B15B6;
     border-color: #5B15B6;
 }
