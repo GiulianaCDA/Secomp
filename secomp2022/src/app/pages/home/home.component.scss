@@ -22,8 +22,9 @@
     overflow: hidden;
 }
 
-.header-homepage-margintop{
+.header-homepage-card {
     margin-top: 10em;
+    width: 50%;
 }
 
 .header-title{
@@ -54,6 +55,10 @@
     font-weight: 600;
 }
 
+.about-title {
+    text-align: right;
+}
+
 section .card-title{
     font-weight: 800;
     font-size: 3em;
@@ -62,4 +67,34 @@ section .card-title{
 
 section p{
     line-height: 1.8em;
+}
+
+@media (max-width: 768px)
+{
+    .header-title {
+        font-size: 2.5em;
+    }
+    
+    .header-homepage-card {
+        margin-top: 10em;
+        width: 100%;
+    }
+
+    .homepage-info-card{
+        width: 90%;
+    }
+
+    .about, .about-title {
+        text-align: center !important;
+    }
+
+    .about-subtitle {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    section .card-title{
+        margin-bottom: 0;
+    }
+
 }

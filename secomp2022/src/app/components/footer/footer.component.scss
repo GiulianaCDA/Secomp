@@ -17,3 +17,9 @@ li a{
     color: white;
 }
 
+@media (max-width: 768px)
+{
+    .footer-img {
+        margin-bottom: 1.2rem;
+    }
+}
