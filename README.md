@@ -1,5 +1,5 @@
 # Secomp 2022
-A secomp 2022 é um evento anual do Instituto de Computação da UFAL, envolve tecnologia, computação e empreendedorismo. 
+Esse repositório consiste num site para a Secomp 2022, um evento anual do Instituto de Computação da UFAL, envolve tecnologia, computação e empreendedorismo. 
 
 ## Como executar
 
@@ -18,18 +18,11 @@ nodejs -v
 npm -v
 ```
 
-2. Em seguida, é necessário instalar a versão 13.2.5 
-do framework Angular CLI. Isso pode ser feito por meio do seguinte comando
-em distribuições Linux:
+2. Em seguida, é necessário instalar todas as dependências do projeto. Isso pode ser feito com apenas
+o comando abaixo: 
 
 ```
-npm install -g @angular/cli@13.2.5
+npm install 
 ```
 
-3. Instale o Bootstrap 4.6.2 da seguinte maneira:
-
-```
-npm install bootstrap@v4.6.6
-```
-
-4. Por fim, acesse localhost:4200 para visualizar a aplicação.
+3. Por fim, acesse localhost:4200 para visualizar a aplicação.
