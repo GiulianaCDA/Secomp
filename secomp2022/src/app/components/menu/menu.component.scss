@@ -2,6 +2,7 @@
     font-size: .87em !important;
     background: #5b15b6;
     padding: 0.7em 4em 0.7em 4em;
+    font-weight: 500;
     padding-left: 4em;
     padding-right: 4em;
     height: auto;
@@ -11,7 +12,7 @@
 }
 
 .menu li a:hover{
-    color:  #66C0A1;
+    color:  #66C0A1!important;
 }
 .nav-item-active{
     border-bottom: solid 2px #66C0A1;
