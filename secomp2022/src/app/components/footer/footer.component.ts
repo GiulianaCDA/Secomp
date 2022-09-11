@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.page = this.CurrentPage
-    console.log(this.page)
   }
   
   get CurrentPage(){
