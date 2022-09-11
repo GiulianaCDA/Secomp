@@ -13,7 +13,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.page = this.CurrentPage
-    console.log(this.page)
   }
   
   get CurrentPage(){
