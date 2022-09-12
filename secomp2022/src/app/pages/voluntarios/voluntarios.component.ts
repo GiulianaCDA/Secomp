@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-voluntarios',
@@ -12,11 +13,13 @@ export class VoluntariosComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
     this._initControlNames()
     this._createForm();
+    this.login();
   }
 
   private _initControlNames() {
@@ -40,5 +43,11 @@ export class VoluntariosComponent implements OnInit {
 
   submit(formValue: any) {
     console.log(formValue)
+  }
+
+  login(){
+    this.authService.getToken().subscribe(res => 
+      console.log(res)
+    )
   }
 }
