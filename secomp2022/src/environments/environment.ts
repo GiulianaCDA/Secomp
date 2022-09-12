@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: `https://secomp.pythonanywhere.com`,
+  user: 'angularservice',
+  password: 'a93q4r23qoj'
 };
 
 /*
