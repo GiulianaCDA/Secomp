@@ -28,48 +28,68 @@
             <form class="form-horizontal" [formGroup]="formGroup">
               <div class="col-md-12 mb-2">
                 <secomp-input
-                  type="text"
                   [formGroup]="formGroup"
-                  [label]="'Nome: '"
+                  [label]="'*Nome: '"
                   controlName="nome"
+                  required
                 >
                 </secomp-input>
+                <div
+                *ngIf="nomeControl == null "
+                class="invalid-feedback d-block"
+                >
+                Campo obrigatório
+                </div>
               </div>
 
               <div class="col-md-12 mb-2">
                 <secomp-input
-                  type="text"
                   [formGroup]="formGroup"
                   [label]="'Curso: '"
                   controlName="curso"
                 >
                 </secomp-input>
+                
               </div>
 
               <div class="col-md-12 mb-2">
                 <secomp-input
-                  type="email"
                   [formGroup]="formGroup"
-                  [label]="'E-mail: '"
+                  [label]="'*E-mail: '"
                   controlName="email"
+                  required
                 >
                 </secomp-input>
+                <div
+                *ngIf="nomeControl == null "
+                class="invalid-feedback d-block"
+                >
+                Campo obrigatório
+                </div>
               </div>
 
               <div class="col-md-6 mb-2">
                 <secomp-input
-                  type="phone"
                   [formGroup]="formGroup"
-                  [label]="'Número de contato: '"
+                  [label]="'*Número de contato: '"
                   controlName="numero"
+                  required
+
                 >
                 </secomp-input>
+                <div
+                *ngIf="nomeControl == null "
+                class="invalid-feedback d-block"
+                >
+                Campo obrigatório
+                </div>
               </div>
 
               <button
                 type="submit"
                 class="btn btn-green w-100 text-white mt-4 material-button"
                 (click)="submit(formGroup.value)"
+                [disabled]="!formGroup.valid"
               >Enviar
               </button>
             </form>

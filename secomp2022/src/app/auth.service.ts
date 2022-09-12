@@ -10,16 +10,18 @@ export class AuthService {
   private url: string = environment.apiUrl
   private user: string = environment.user
   private password: string = environment.password
+  private token!: string
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  getToken(){
-    const login = {
+
+  login(){
+    const data = {
       username: this.user,
       password: this.password
     }
-    return this.http.post<any>(`${this.url}/token/`, login);
+    return this.http.post<any>(`${this.url}/token/`, data)
   }
 }

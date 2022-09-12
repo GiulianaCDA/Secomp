@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 
+import { VoluntariosService } from './voluntarios.service';
 @Component({
   selector: 'app-voluntarios',
   templateUrl: './voluntarios.component.html',
@@ -10,16 +11,21 @@ import { AuthService } from 'src/app/auth.service';
 export class VoluntariosComponent implements OnInit {
   formGroup!: FormGroup 
   controlNames!: { [key: string]: string }
-
+  token!: string
+  valid = true
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private voluntariosService: VoluntariosService
   ) { }
 
   ngOnInit(): void {
     this._initControlNames()
     this._createForm();
-    this.login();
+    console.log(this.nomeControl)
+    this.authService.login().subscribe(res => {
+      this.token = res.access
+    })
   }
 
   private _initControlNames() {
@@ -34,20 +40,23 @@ export class VoluntariosComponent implements OnInit {
   private _createForm() {
     const tmp = this.controlNames
     this.formGroup = new FormGroup({
-      [tmp.nome]: new FormControl(null),
+      [tmp.nome]: new FormControl(null,  Validators.required),
       [tmp.curso]: new FormControl(null),
-      [tmp.email]: new FormControl(null),
-      [tmp.numero]: new FormControl(null),
+      [tmp.email]: new FormControl(null,  Validators.required),
+      [tmp.numero]: new FormControl(null,  Validators.required),
     })
   }
 
   submit(formValue: any) {
-    console.log(formValue)
-  }
-
-  login(){
-    this.authService.getToken().subscribe(res => 
+    console.log(this.nomeControl)
+    this.voluntariosService.postVoluntario(formValue, this.token)
+    .subscribe(res=>{
       console.log(res)
-    )
-  }
+    })
+ }
+
+ get nomeControl(){
+  return this.formGroup.get('nome')?.value
+ }
+
 }
