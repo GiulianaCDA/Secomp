@@ -35,7 +35,8 @@
                 >
                 </secomp-input>
                 <div
-                *ngIf="nomeControl == null "
+                *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
+                 formGroup.controls['nome'].touched)"
                 class="invalid-feedback d-block"
                 >
                 Campo obrigatório
@@ -45,11 +46,18 @@
               <div class="col-md-12 mb-2">
                 <secomp-input
                   [formGroup]="formGroup"
-                  [label]="'Curso: '"
+                  [label]="'*Curso: '"
                   controlName="curso"
+                  required
                 >
                 </secomp-input>
-                
+                <div
+                *ngIf="formGroup.controls['curso'].invalid && (formGroup.controls['curso'].dirty ||
+                formGroup.controls['curso'].touched)"
+                class="invalid-feedback d-block"
+                >
+                Campo obrigatório
+                </div>
               </div>
 
               <div class="col-md-12 mb-2">
@@ -61,7 +69,8 @@
                 >
                 </secomp-input>
                 <div
-                *ngIf="nomeControl == null "
+                *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty ||
+                formGroup.controls['email'].touched)"
                 class="invalid-feedback d-block"
                 >
                 Campo obrigatório
@@ -78,7 +87,8 @@
                 >
                 </secomp-input>
                 <div
-                *ngIf="nomeControl == null "
+                *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
+                formGroup.controls['numero'].touched)"
                 class="invalid-feedback d-block"
                 >
                 Campo obrigatório

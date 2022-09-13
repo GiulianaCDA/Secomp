@@ -12,6 +12,10 @@ export class VoluntariosComponent implements OnInit {
   formGroup!: FormGroup 
   controlNames!: { [key: string]: string }
   token!: string
+  validNomeField: boolean = true
+  validNumeroField: boolean = true
+  validEmailField: boolean = true
+
   valid = true
   constructor(
     private formBuilder: FormBuilder,
@@ -22,7 +26,6 @@ export class VoluntariosComponent implements OnInit {
   ngOnInit(): void {
     this._initControlNames()
     this._createForm();
-    console.log(this.nomeControl)
     this.authService.login().subscribe(res => {
       this.token = res.access
     })
@@ -41,22 +44,18 @@ export class VoluntariosComponent implements OnInit {
     const tmp = this.controlNames
     this.formGroup = new FormGroup({
       [tmp.nome]: new FormControl(null,  Validators.required),
-      [tmp.curso]: new FormControl(null),
+      [tmp.curso]: new FormControl(null, Validators.required),
       [tmp.email]: new FormControl(null,  Validators.required),
       [tmp.numero]: new FormControl(null,  Validators.required),
     })
   }
 
   submit(formValue: any) {
-    console.log(this.nomeControl)
+
     this.voluntariosService.postVoluntario(formValue, this.token)
     .subscribe(res=>{
       console.log(res)
     })
- }
-
- get nomeControl(){
-  return this.formGroup.get('nome')?.value
  }
 
 }
