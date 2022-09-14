@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 
 import { VoluntariosService } from './voluntarios.service';
@@ -19,8 +20,10 @@ export class VoluntariosComponent implements OnInit {
   valid = true
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
     private authService: AuthService,
-    private voluntariosService: VoluntariosService
+    private voluntariosService: VoluntariosService,
   ) { }
 
   ngOnInit(): void {
@@ -53,8 +56,12 @@ export class VoluntariosComponent implements OnInit {
   submit(formValue: any) {
 
     this.voluntariosService.postVoluntario(formValue, this.token)
-    .subscribe(res=>{
-      console.log(res)
+    .subscribe(res => {
+      console.log('jfj');
+    })
+    
+    this.router.navigate(['../../'], {
+      relativeTo: this.route,
     })
  }
 
