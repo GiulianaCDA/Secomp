@@ -108,4 +108,91 @@
       </div>
   </div>
 </div>
+<div class="mobile-form">
+  <div class="card form-voluntarios-mobile">
+    <div class="card-header text-center p-2"> 
+      Seja voluntário
+    </div>
+    <div class="card-body">
+      <form class="form-horizontal" [formGroup]="formGroup">
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Nome: '"
+            controlName="nome"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
+           formGroup.controls['nome'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Curso: '"
+            controlName="curso"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['curso'].invalid && (formGroup.controls['curso'].dirty ||
+          formGroup.controls['curso'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*E-mail: '"
+            controlName="email"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty ||
+          formGroup.controls['email'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Número de contato: '"
+            controlName="numero"
+            required
+
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
+          formGroup.controls['numero'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-green w-100 text-white mt-4 material-button"
+          (click)="submit(formGroup.value)"
+          [disabled]="!formGroup.valid"
+        >Enviar
+        </button>
+      </form>
+    </div>
+</div>
+</div>
 <app-footer></app-footer>
