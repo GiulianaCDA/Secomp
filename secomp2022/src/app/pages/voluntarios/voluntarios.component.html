@@ -22,9 +22,30 @@
       <div class="col-md-6">
         <div class="card form-voluntarios">
           <div class="card-header text-center p-2"> 
-            Seja voluntário
+            Formulário - Seja voluntário
           </div>
-          <div class="card-body">
+
+          <div 
+          class="alert alert-success text-center" 
+          role="alert"
+          *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+          >
+            Envio feito com sucesso. Obrigado! 
+          </div>
+          
+          <div 
+          class="alert alert-danger text-center" 
+          role="alert"
+          *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+          >
+            {{ postMessage.message }}
+          </div>
+
+          <div 
+            class="card-body"
+            *ngIf="postMessage.message == ' ' ||
+            postMessage.message == 'Algo deu errado. Tente novamente.'"
+          >
             <form class="form-horizontal" [formGroup]="formGroup">
               <div class="col-md-12 mb-2">
                 <secomp-input

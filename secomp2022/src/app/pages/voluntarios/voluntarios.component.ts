@@ -12,6 +12,9 @@ import { VoluntariosService } from './voluntarios.service';
 export class VoluntariosComponent implements OnInit {
   formGroup!: FormGroup 
   controlNames!: { [key: string]: string }
+  postMessage: any = {
+    message: ' '
+  }
   token!: string
   validNomeField: boolean = true
   validNumeroField: boolean = true
@@ -55,14 +58,14 @@ export class VoluntariosComponent implements OnInit {
 
   submit(formValue: any) {
 
-    this.voluntariosService.postVoluntario(formValue, this.token)
-    .subscribe(res => {
-      console.log('jfj');
-    })
-    
-    this.router.navigate(['../../'], {
-      relativeTo: this.route,
-    })
+    this.voluntariosService.postVoluntario(formValue, this.token).subscribe(
+    res => {
+      this.postMessage = res
+    },
+    err => {
+      this.postMessage.message = 'Algo deu errado. Tente novamente.'
+    }
+    )
  }
 
 }
