@@ -28,7 +28,8 @@
           <div 
           class="alert alert-success text-center" 
           role="alert"
-          *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+          *ngIf="postMessage.message ==  'Formulário enviado com sucesso'
+          || success == true "
           >
             Envio feito com sucesso. Obrigado! 
           </div>

@@ -16,6 +16,7 @@ export class VoluntariosComponent implements OnInit {
     message: ' '
   }
   token!: string
+  success = false;
   validNomeField: boolean = true
   validNumeroField: boolean = true
   validEmailField: boolean = true
@@ -61,6 +62,7 @@ export class VoluntariosComponent implements OnInit {
     this.voluntariosService.postVoluntario(formValue, this.token).subscribe(
     res => {
       this.postMessage = res
+      this.success = true
     },
     err => {
       this.postMessage.message = 'Algo deu errado. Tente novamente.'
