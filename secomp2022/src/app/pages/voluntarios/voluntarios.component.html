@@ -116,16 +116,13 @@
                 Campo obrigatório
                 </div>
               </div>
-              <a
-              (click)="submit(formGroup.value)">
-                <button
-                  type="submit"
-                  class="btn bg-green w-100 text-white mt-4 material-button"
-                  
-                  [disabled]="!formGroup.valid"
-                >Enviar
-                </button>
-              </a>
+              <button
+              type="submit"
+              class="btn bg-green w-100 text-white mt-4 material-button"
+              (click)="submit(formGroup.value)"
+              [disabled]="!formGroup.valid"
+            >Enviar
+            </button>
             </form>
           </div>
         </div>
@@ -154,7 +151,8 @@
       >
         {{ postMessage.message }}
       </div>
-      <form class="form-horizontal" [formGroup]="formGroup">
+      <form class="form-horizontal" [formGroup]="formGroup"
+      *ngIf="postMessage == ' ' ">
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
@@ -226,7 +224,7 @@
 
         <button
           type="submit"
-          class="btn btn-green w-100 text-white mt-4 material-button"
+          class="btn bg-green w-100 text-white mt-4 material-button"
           (click)="submit(formGroup.value)"
           [disabled]="!formGroup.valid"
         >Enviar
