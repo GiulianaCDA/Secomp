@@ -138,6 +138,22 @@
       Seja voluntário
     </div>
     <div class="card-body">
+      <div 
+      class="alert alert-success text-center" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Formulário enviado com sucesso'
+      || success == true "
+      >
+        Envio feito com sucesso. Obrigado! 
+      </div>
+      
+      <div 
+      class="alert alert-danger text-center" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+      >
+        {{ postMessage.message }}
+      </div>
       <form class="form-horizontal" [formGroup]="formGroup">
         <div class="col-md-12 mb-2">
           <secomp-input
