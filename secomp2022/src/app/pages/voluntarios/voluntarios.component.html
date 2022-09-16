@@ -116,14 +116,16 @@
                 Campo obrigatório
                 </div>
               </div>
-
-              <button
-                type="submit"
-                class="btn bg-green w-100 text-white mt-4 material-button"
-                (click)="submit(formGroup.value)"
-                [disabled]="!formGroup.valid"
-              >Enviar
-              </button>
+              <a
+              (click)="submit(formGroup.value)">
+                <button
+                  type="submit"
+                  class="btn bg-green w-100 text-white mt-4 material-button"
+                  
+                  [disabled]="!formGroup.valid"
+                >Enviar
+                </button>
+              </a>
             </form>
           </div>
         </div>
