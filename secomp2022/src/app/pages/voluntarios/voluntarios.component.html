@@ -26,28 +26,11 @@
           </div>
 
           <div 
-          class="alert alert-success text-center" 
-          role="alert"
-          *ngIf="postMessage.message ==  'Formulário enviado com sucesso'
-          || success == true "
-          >
-            Envio feito com sucesso. Obrigado! 
-          </div>
-          
-          <div 
-          class="alert alert-danger text-center" 
-          role="alert"
-          *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
-          >
-            {{ postMessage.message }}
-          </div>
-
-          <div 
             class="card-body"
-            *ngIf="postMessage.message == ' ' ||
-            postMessage.message == 'Algo deu errado. Tente novamente.'"
           >
-            <form class="form-horizontal" [formGroup]="formGroup">
+            <form class="form-horizontal" [formGroup]="formGroup"
+            *ngIf="success == false"
+            >
               <div class="col-md-12 mb-2">
                 <secomp-input
                   [formGroup]="formGroup"
@@ -124,6 +107,21 @@
             >Enviar
             </button>
             </form>
+            <div 
+            class="alert alert-success text-center mt-4" 
+            role="alert"
+            *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+            >
+              Envio feito com sucesso. Obrigado! 
+            </div>
+            
+            <div 
+            class="alert alert-danger text-center mt-4" 
+            role="alert"
+            *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+            >
+              {{ postMessage.message }}
+            </div>
           </div>
         </div>
       </div>
@@ -135,24 +133,8 @@
       Seja voluntário
     </div>
     <div class="card-body">
-      <div 
-      class="alert alert-success text-center" 
-      role="alert"
-      *ngIf="postMessage.message ==  'Formulário enviado com sucesso'
-      || success == true "
-      >
-        Envio feito com sucesso. Obrigado! 
-      </div>
-      
-      <div 
-      class="alert alert-danger text-center" 
-      role="alert"
-      *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
-      >
-        {{ postMessage.message }}
-      </div>
-      <form class="form-horizontal" [formGroup]="formGroup"
-      *ngIf="postMessage == ' ' ">
+      <form class="form-horizontal" [formGroup]="formGroup" 
+      *ngIf="success == false">
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
@@ -230,6 +212,21 @@
         >Enviar
         </button>
       </form>
+      <div 
+      class="alert alert-success text-center mt-4" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+      >
+        Envio feito com sucesso. Obrigado! 
+      </div>
+      
+      <div 
+      class="alert alert-danger text-center mt-4" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+      >
+        {{ postMessage.message }}
+      </div>
     </div>
 </div>
 </div>

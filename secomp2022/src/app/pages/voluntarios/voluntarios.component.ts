@@ -33,6 +33,7 @@ export class VoluntariosComponent implements OnInit {
   ngOnInit(): void {
     this._initControlNames()
     this._createForm();
+    console.log(this.postMessage)
     this.authService.login().subscribe(res => {
       this.token = res.access
     })
@@ -66,6 +67,7 @@ export class VoluntariosComponent implements OnInit {
     },
     err => {
       this.postMessage.message = 'Algo deu errado. Tente novamente.'
+      this.success = false
     }
     )
  }
