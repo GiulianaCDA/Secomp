@@ -3,7 +3,7 @@
 <div class="spacing">
   <div class="row">
       <div class="col-md-6  texto-voluntarios">
-          <h1 class="card-title text-purple">Deixe sua marca na <br>Secomp 2022</h1>
+          <h1 class="card-title text-purple">Deixe sua marca na <br>Secomp</h1>
           <p>Ser voluntário na Secomp é uma oportunidade imperdível de fortalecer suas habilidades
             interpessoais e fazer networking, além de contribuir com a comunidade acadêmica. 
           </p>
@@ -26,27 +26,11 @@
           </div>
 
           <div 
-          class="alert alert-success text-center" 
-          role="alert"
-          *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
-          >
-            Envio feito com sucesso. Obrigado! 
-          </div>
-          
-          <div 
-          class="alert alert-danger text-center" 
-          role="alert"
-          *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
-          >
-            {{ postMessage.message }}
-          </div>
-
-          <div 
             class="card-body"
-            *ngIf="postMessage.message == ' ' ||
-            postMessage.message == 'Algo deu errado. Tente novamente.'"
           >
-            <form class="form-horizontal" [formGroup]="formGroup">
+            <form class="form-horizontal" [formGroup]="formGroup"
+            *ngIf="success == false"
+            >
               <div class="col-md-12 mb-2">
                 <secomp-input
                   [formGroup]="formGroup"
@@ -115,15 +99,29 @@
                 Campo obrigatório
                 </div>
               </div>
-
               <button
-                type="submit"
-                class="btn btn-green w-100 text-white mt-4 material-button"
-                (click)="submit(formGroup.value)"
-                [disabled]="!formGroup.valid"
-              >Enviar
-              </button>
+              type="submit"
+              class="btn bg-green w-100 text-white mt-4 material-button"
+              (click)="submit(formGroup.value)"
+              [disabled]="!formGroup.valid"
+            >Enviar
+            </button>
             </form>
+            <div 
+            class="alert alert-success text-center mt-4" 
+            role="alert"
+            *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+            >
+              Envio feito com sucesso. Obrigado! 
+            </div>
+            
+            <div 
+            class="alert alert-danger text-center mt-4" 
+            role="alert"
+            *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+            >
+              {{ postMessage.message }}
+            </div>
           </div>
         </div>
       </div>
@@ -135,7 +133,8 @@
       Seja voluntário
     </div>
     <div class="card-body">
-      <form class="form-horizontal" [formGroup]="formGroup">
+      <form class="form-horizontal" [formGroup]="formGroup" 
+      *ngIf="success == false">
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
@@ -207,12 +206,27 @@
 
         <button
           type="submit"
-          class="btn btn-green w-100 text-white mt-4 material-button"
+          class="btn bg-green w-100 text-white mt-4 material-button"
           (click)="submit(formGroup.value)"
           [disabled]="!formGroup.valid"
         >Enviar
         </button>
       </form>
+      <div 
+      class="alert alert-success text-center mt-4" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+      >
+        Envio feito com sucesso. Obrigado! 
+      </div>
+      
+      <div 
+      class="alert alert-danger text-center mt-4" 
+      role="alert"
+      *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+      >
+        {{ postMessage.message }}
+      </div>
     </div>
 </div>
 </div>
