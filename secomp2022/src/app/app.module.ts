@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component';
 import { SecompInputComponent } from './components/secomp-input/secomp-input.component';
+import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SecompInputComponent } from './components/secomp-input/secomp-input.com
     MenuComponent,
     FooterComponent,
     VoluntariosComponent,
-    SecompInputComponent
+    SecompInputComponent,
+    InscricoesComponent
   ],
   imports: [
     BrowserModule,
