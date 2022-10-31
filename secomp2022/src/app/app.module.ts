@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component';
 import { SecompInputComponent } from './components/secomp-input/secomp-input.component';
 import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
+import { CongressoComponent } from './pages/congresso/congresso.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
     FooterComponent,
     VoluntariosComponent,
     SecompInputComponent,
-    InscricoesComponent
+    InscricoesComponent,
+    CongressoComponent
   ],
   imports: [
     BrowserModule,

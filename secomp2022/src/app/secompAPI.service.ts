@@ -7,7 +7,7 @@ import { Voluntario } from 'src/app/interfaces';
 @Injectable({
   providedIn: 'root'
 })
-export class VoluntariosService {
+export class SecompAPIService {
   private url: string = environment.apiUrl
 
   constructor(
@@ -23,7 +23,6 @@ export class VoluntariosService {
     let options = { headers: headers };
 
     return this.http.post(`${this.url}/subscribe/volunteer/`, data, options)
-   
   }
 
 }

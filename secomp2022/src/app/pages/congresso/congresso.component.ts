@@ -4,12 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 
 import { SecompAPIService } from '../../secompAPI.service';
+
 @Component({
-  selector: 'app-voluntarios',
-  templateUrl: './voluntarios.component.html',
-  styleUrls: ['./voluntarios.component.scss']
+  selector: 'app-congresso',
+  templateUrl: './congresso.component.html',
+  styleUrls: ['./congresso.component.scss']
 })
-export class VoluntariosComponent implements OnInit {
+export class CongressoComponent implements OnInit {
+
   formGroup!: FormGroup 
   controlNames!: { [key: string]: string }
   postMessage: any = {
