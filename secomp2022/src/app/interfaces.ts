@@ -15,5 +15,5 @@ export interface Inscrito {
 export interface ArtigoInfo {
     nome: string
     email: string
-    cpf: string
+    numero: string
 }

@@ -29,7 +29,7 @@ export class SecompAPIService {
     const formData = new FormData();
     formData.append("nome", data.nome);
     formData.append("email", data.email);
-    formData.append("cpf", data.cpf);
+    formData.append("cpf", data.numero);
     formData.append("artigo", file);
 
     let headers = new HttpHeaders({
