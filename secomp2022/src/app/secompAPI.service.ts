@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { AuthService } from 'src/app/auth.service';
 import { environment } from 'src/environments/environment'
-import { Voluntario } from 'src/app/interfaces';
+import { Voluntario, ArtigoInfo } from 'src/app/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,21 @@ export class SecompAPIService {
     let options = { headers: headers };
 
     return this.http.post(`${this.url}/subscribe/volunteer/`, data, options)
+  }
+
+  postArtigo(data: ArtigoInfo, file: File, token: any){
+    const formData = new FormData();
+    formData.append("nome", data.nome);
+    formData.append("email", data.email);
+    formData.append("cpf", data.cpf);
+    formData.append("artigo", file);
+
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token });
+
+    let options = { headers: headers };
+
+    return this.http.post(`${this.url}/subscribe/participant/`, formData, options)
   }
 
 }

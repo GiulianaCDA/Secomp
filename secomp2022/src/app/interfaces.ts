@@ -11,3 +11,9 @@ export interface Inscrito {
     email: string
     ja_participou: boolean
 }
+
+export interface ArtigoInfo {
+    nome: string
+    email: string
+    cpf: string
+}

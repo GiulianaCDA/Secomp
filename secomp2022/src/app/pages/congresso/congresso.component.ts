@@ -18,18 +18,20 @@ export class CongressoComponent implements OnInit {
     message: ' '
   }
   token!: string
+  file!: File
   success = false;
   validNomeField: boolean = true
   validNumeroField: boolean = true
   validEmailField: boolean = true
-
+  validArtigoField: boolean = true
   valid = true
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private voluntariosService: SecompAPIService,
+    private congressoService: SecompAPIService,
   ) { }
 
   ngOnInit(): void {
@@ -44,9 +46,9 @@ export class CongressoComponent implements OnInit {
   private _initControlNames() {
     this.controlNames = {
       nome: 'nome',
-      curso: 'curso',
       email: 'email',
       numero: 'numero',
+      artigo: 'artigo',
     }
   }
 
@@ -54,15 +56,15 @@ export class CongressoComponent implements OnInit {
     const tmp = this.controlNames
     this.formGroup = new FormGroup({
       [tmp.nome]: new FormControl(null,  Validators.required),
-      [tmp.curso]: new FormControl(null, Validators.required),
       [tmp.email]: new FormControl(null,  Validators.required),
       [tmp.numero]: new FormControl(null,  Validators.required),
+      [tmp.artigo]: new FormControl(null,  Validators.required),
     })
   }
 
   submit(formValue: any) {
 
-    this.voluntariosService.postVoluntario(formValue, this.token).subscribe(
+    this.congressoService.postArtigo(formValue, this.file, this.token).subscribe(
     res => {
       this.postMessage = res
       this.success = true
@@ -72,6 +74,10 @@ export class CongressoComponent implements OnInit {
       this.success = false
     }
     )
+ }
+
+ onChangeFile(event: any) {
+  this.file = event.srcElement.files[0]
  }
 
 }

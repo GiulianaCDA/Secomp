@@ -3,26 +3,36 @@
 <div class="spacing">
   <div class="row">
       <div class="col-md-6  texto-voluntarios">
-          <h1 class="card-title text-purple">Deixe sua marca na <br>Secomp</h1>
-          <p>Ser voluntário na Secomp é uma oportunidade imperdível de fortalecer suas habilidades
-            interpessoais e fazer networking, além de contribuir com a comunidade acadêmica. 
+          <h1 class="card-title text-purple">I Congresso Secomp</h1>
+          <p>A Comissão Organizadora do I Congresso de Publicações Científicas da Semana de
+            Computação da UFAL torna pública a abertura para submissões de trabalhos acadêmicos
+            no formato de artigo científico.
           </p>
           <p>
-            Nesta edição, as atuações dos voluntários serão definidas conforme as necessidades a 
-            serem atendidas. Todos os envios serão recebidos, priorizando aqueles que enviaram
-            primeiro. Além disso, todo voluntário tem direito a um certificado com carga horária.
+            Os trabalhos acadêmicos deverão se enquadrar nos seguintes eixos temáticos:<br><br>
+            <span class="text-purple">
+            1. Educação e STEM <br>
+            2. Políticas Públicas, Sustentabilidade e Computação<br>
+            3. Indústria e Computação<br>
+            </span>
           </p>
+
           <p>
-            Em até 7 dias após a inscrição, enviamos e-mail aos selecionados. 
-            Faremos uma segunda chamada com as vagas remanescentes dos candidatos que não 
-            confirmaram suas inscrições.
+            O artigo poderá ser submetido até o dia 13/11, deve ter no mínimo 4 páginas e no máximo 7. Os
+            artigos podem ser escritos em português ou inglês. Cada autor poderá enviar até 2 trabalhos acadêmicos. 
+            Além disso, não há limite de coautores por trabalho.
           </p>
+
+          <a href="https://drive.google.com/drive/folders/1XxYIhuB-m5QyFi2RZbl-ElL6JNq7Kl3I?usp=share_link" class="btn-purple btn text-white">
+            Edital e template
+          </a>
+  
       </div>
 
       <div class="col-md-6">
         <div class="card form-voluntarios">
           <div class="card-header text-center p-2"> 
-            Formulário - Seja voluntário
+            Envie seu artigo
           </div>
 
           <div 
@@ -34,7 +44,7 @@
               <div class="col-md-12 mb-2">
                 <secomp-input
                   [formGroup]="formGroup"
-                  [label]="'*Nome: '"
+                  [label]="'*Autor principal: '"
                   controlName="nome"
                   required
                 >
@@ -42,23 +52,6 @@
                 <div
                 *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
                  formGroup.controls['nome'].touched)"
-                class="invalid-feedback d-block"
-                >
-                Campo obrigatório
-                </div>
-              </div>
-
-              <div class="col-md-12 mb-2">
-                <secomp-input
-                  [formGroup]="formGroup"
-                  [label]="'*Curso: '"
-                  controlName="curso"
-                  required
-                >
-                </secomp-input>
-                <div
-                *ngIf="formGroup.controls['curso'].invalid && (formGroup.controls['curso'].dirty ||
-                formGroup.controls['curso'].touched)"
                 class="invalid-feedback d-block"
                 >
                 Campo obrigatório
@@ -85,10 +78,9 @@
               <div class="col-md-6 mb-2">
                 <secomp-input
                   [formGroup]="formGroup"
-                  [label]="'*Número de contato: '"
+                  [label]="'*CPF: '"
                   controlName="numero"
                   required
-
                 >
                 </secomp-input>
                 <div
@@ -99,11 +91,21 @@
                 Campo obrigatório
                 </div>
               </div>
+
+              <div class="col-md-12 mb-2">
+                <label for="formFile" class="form-label">*Artigo:</label>
+                <input 
+                class="form-control"
+                type="file" 
+                id="formFile" 
+                (change)="onChangeFile($event)"
+                required>
+              </div>
+      
               <button
               type="submit"
               class="btn bg-green w-100 text-white mt-4 material-button"
               (click)="submit(formGroup.value)"
-              [disabled]="!formGroup.valid"
             >Enviar
             </button>
             </form>
@@ -138,7 +140,7 @@
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*Nome: '"
+            [label]="'*Autor principal: '"
             controlName="nome"
             required
           >
@@ -146,23 +148,6 @@
           <div
           *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
            formGroup.controls['nome'].touched)"
-          class="invalid-feedback d-block"
-          >
-          Campo obrigatório
-          </div>
-        </div>
-
-        <div class="col-md-12 mb-2">
-          <secomp-input
-            [formGroup]="formGroup"
-            [label]="'*Curso: '"
-            controlName="curso"
-            required
-          >
-          </secomp-input>
-          <div
-          *ngIf="formGroup.controls['curso'].invalid && (formGroup.controls['curso'].dirty ||
-          formGroup.controls['curso'].touched)"
           class="invalid-feedback d-block"
           >
           Campo obrigatório
@@ -189,7 +174,7 @@
         <div class="col-md-6 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*Número de contato: '"
+            [label]="'*CPF: '"
             controlName="numero"
             required
 
@@ -198,6 +183,23 @@
           <div
           *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
           formGroup.controls['numero'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <label for="formFile" class="form-label">*Artigo:</label>
+          <input 
+          class="form-control"
+          type="file" 
+          id="formFile" 
+          (change)="onChangeFile($event)">
+
+          <div
+          *ngIf="formGroup.controls['artigo'].invalid && (formGroup.controls['artigo'].dirty ||
+          formGroup.controls['artigo'].touched)"
           class="invalid-feedback d-block"
           >
           Campo obrigatório
