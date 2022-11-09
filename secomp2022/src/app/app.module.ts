@@ -12,6 +12,7 @@ import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component'
 import { SecompInputComponent } from './components/secomp-input/secomp-input.component';
 import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
 import { CongressoComponent } from './pages/congresso/congresso.component';
+import { MaratonaComponent } from './pages/maratona/maratona.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CongressoComponent } from './pages/congresso/congresso.component';
     VoluntariosComponent,
     SecompInputComponent,
     InscricoesComponent,
-    CongressoComponent
+    CongressoComponent,
+    MaratonaComponent
   ],
   imports: [
     BrowserModule,
