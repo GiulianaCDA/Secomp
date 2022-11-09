@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: 'congresso', component: CongressoComponent },
   { path: 'minicursos', component: HomeComponent },
   { path: 'campeonato', component: HomeComponent },
-  { path: 'sejavoluntario', component: VoluntariosComponent },
 ];
 
 @NgModule({
