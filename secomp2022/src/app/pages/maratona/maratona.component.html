@@ -3,25 +3,29 @@
     <div class="row">
         <div class="col-md-6  texto-voluntarios">
             <h1 class="card-title text-purple">Maratona de Programação</h1>
-            <p>Ser voluntário na Secomp é uma oportunidade imperdível de fortalecer suas habilidades
-              interpessoais e fazer networking, além de contribuir com a comunidade acadêmica. 
+            <p>A maratona de programação é uma competição que promove nos estudantes a criatividade, 
+              a capacidade de trabalho em equipe, a busca de novas soluções de software e a habilidade de 
+              resolver problemas sob pressão. Ocorre todo ano na SECOMP e é organizada pelo 
+              GEMA Grupo de Extensão em Maratona de Programação, que tem como objetivo fomentar e 
+              estruturar o estudo para as competições de programação. 
             </p>
             <p>
-              Nesta edição, as atuações dos voluntários serão definidas conforme as necessidades a 
-              serem atendidas. Todos os envios serão recebidos, priorizando aqueles que enviaram
-              primeiro. Além disso, todo voluntário tem direito a um certificado com carga horária.
+              <strong>  Requisitos para participar: </strong> <br>
+              - Pelo menos um dos participantes deve possuir conta no TheHuxley <br>
+              - A equipe deve ter um máximo de três participantes <br>
+              - Ter vontade de resolver problemas programando!
             </p>
             <p>
-              Em até 7 dias após a inscrição, enviamos e-mail aos selecionados. 
-              Faremos uma segunda chamada com as vagas remanescentes dos candidatos que não 
-              confirmaram suas inscrições.
+              A maratona irá acontecer durante a SECOMP, na quarta feira (23/11), de 9 da manhã até o meio dia.
+              Todos são bem-vindos para participar, independente do nível de experiência. Será realizada em um
+              dos laboratórios do Instituto de Computação por meio da plataforma TheHuxley.
             </p>
         </div>
   
         <div class="col-md-6">
           <div class="card form-voluntarios">
-            <div class="card-header text-center p-2"> 
-              Formulário - Seja voluntário
+            <div class="card-header text-center p-2">
+              Formulário - Maratona de Programação
             </div>
   
             <div 
@@ -33,14 +37,14 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Nome: '"
+                    [label]="'*Nome do Time: '"
                     controlName="nome_equipe"
                     required
                   >
                   </secomp-input>
                   <div
-                  *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
-                   formGroup.controls['nome'].touched)"
+                  *ngIf="formGroup.controls['nome_equipe'].invalid && (formGroup.controls['nome_equipe'].dirty ||
+                  formGroup.controls['nome_equipe'].touched)"
                   class="invalid-feedback d-block"
                   >
                   Campo obrigatório
@@ -50,14 +54,14 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Curso: '"
-                    controlName="curso"
+                    [label]="'*Nome do líder: '"
+                    controlName="nome_lider"
                     required
                   >
                   </secomp-input>
                   <div
-                  *ngIf="formGroup.controls['curso'].invalid && (formGroup.controls['curso'].dirty ||
-                  formGroup.controls['curso'].touched)"
+                  *ngIf="formGroup.controls['nome_lider'].invalid && (formGroup.controls['nome_lider'].dirty ||
+                  formGroup.controls['nome_lider'].touched)"
                   class="invalid-feedback d-block"
                   >
                   Campo obrigatório
@@ -84,7 +88,7 @@
                 <div class="col-md-6 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Número de contato: '"
+                    [label]="'*Número de telefone do líder: '"
                     controlName="numero"
                     required
   
@@ -98,6 +102,25 @@
                   Campo obrigatório
                   </div>
                 </div>
+
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'*Nome do segundo membro da equipe: '"
+                    controlName="nome2"
+                  >
+                  </secomp-input>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'*Nome do terceiro membro da equipe: '"
+                    controlName="nome3"
+                  >
+                  </secomp-input>
+                </div>
+
                 <button
                 type="submit"
                 class="btn bg-green w-100 text-white mt-4 material-button"

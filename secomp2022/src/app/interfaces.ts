@@ -4,7 +4,7 @@ export interface Voluntario {
     numero: string
     email: string
 }
-  
+
 export interface Inscrito {
     nome: string
     curso: string
@@ -16,4 +16,12 @@ export interface ArtigoInfo {
     nome: string
     email: string
     numero: string
+}
+export interface TimeMaratona {
+    nome_equipe: string
+    nome_lider: string
+    email: string
+    numero: string
+    nome2: string
+    nome3: string
 }

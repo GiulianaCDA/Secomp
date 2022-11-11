@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 import { SecompAPIService } from '../../secompAPI.service';
@@ -27,7 +27,7 @@ export class MaratonaComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private voluntariosService: SecompAPIService,
+    private maratonaService: SecompAPIService,
   ) { }
 
   ngOnInit(): void {
@@ -41,11 +41,11 @@ export class MaratonaComponent implements OnInit {
   private _initControlNames() {
     this.controlNames = {
       nome_equipe: 'nome_equipe',
-      email: 'email_lider',
-      numero: 'numero_lider',
       nome_lider: 'nome_lider',
-      nome2: 'participante_2',
-      nome3: 'participante_3'
+      email: 'email',
+      numero: 'numero',
+      nome2: 'nome2',
+      nome3: 'nome3'
     }
   }
 
@@ -53,16 +53,16 @@ export class MaratonaComponent implements OnInit {
     const tmp = this.controlNames
     this.formGroup = new FormGroup({
       [tmp.nome_equipe]: new FormControl(null,  Validators.required),
+      [tmp.nome_lider]: new FormControl(null,  Validators.required),
       [tmp.email]: new FormControl(null, Validators.required),
       [tmp.numero]: new FormControl(null,  Validators.required),
-      [tmp.nome_lider]: new FormControl(null,  Validators.required),
-      [tmp.nome_2]: new FormControl(null,  Validators.required),
-      [tmp.nome_3]: new FormControl(null,  Validators.required),
+      [tmp.nome2]: new FormControl(null),
+      [tmp.nome3]: new FormControl(null),
     })
   }
 
   submit(formValue: any) {
-    this.voluntariosService.postVoluntario(formValue, this.token).subscribe(
+    this.maratonaService.postTimeMaratona(formValue, this.token).subscribe(
     res => {
       this.postMessage = res
       this.success = true
