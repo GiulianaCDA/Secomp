@@ -149,3 +149,125 @@
         </div>
     </div>
   </div>
+
+  <div class="mobile-form">
+    <div class="card form-voluntarios-mobile">
+      <div class="card-header text-center p-2"> 
+        Formulário - Maratona de Programação
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" [formGroup]="formGroup" 
+        *ngIf="success == false">
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Nome do Time: '"
+            controlName="nome_equipe"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['nome_equipe'].invalid && (formGroup.controls['nome_equipe'].dirty ||
+          formGroup.controls['nome_equipe'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Nome do líder: '"
+            controlName="nome_lider"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['nome_lider'].invalid && (formGroup.controls['nome_lider'].dirty ||
+          formGroup.controls['nome_lider'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*E-mail: '"
+            controlName="email"
+            required
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty ||
+          formGroup.controls['email'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Número de telefone do líder: '"
+            controlName="numero"
+            required
+
+          >
+          </secomp-input>
+          <div
+          *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
+          formGroup.controls['numero'].touched)"
+          class="invalid-feedback d-block"
+          >
+          Campo obrigatório
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Nome do segundo membro da equipe: '"
+            controlName="nome2"
+          >
+          </secomp-input>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'*Nome do terceiro membro da equipe: '"
+            controlName="nome3"
+          >
+          </secomp-input>
+        </div>
+
+        <button
+        type="submit"
+        class="btn bg-green w-100 text-white mt-4 material-button"
+        (click)="submit(formGroup.value)"
+        [disabled]="!formGroup.valid"
+      >Enviar
+      </button>
+        </form>
+        <div 
+        class="alert alert-success text-center mt-4" 
+        role="alert"
+        *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+        >
+          Envio feito com sucesso. Obrigado! 
+        </div>
+        
+        <div 
+        class="alert alert-danger text-center mt-4" 
+        role="alert"
+        *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+        >
+          {{ postMessage.message }}
+        </div>
+      </div>
+  </div>
+  </div>
