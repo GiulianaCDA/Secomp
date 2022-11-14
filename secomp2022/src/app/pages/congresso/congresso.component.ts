@@ -38,9 +38,6 @@ export class CongressoComponent implements OnInit {
     this._initControlNames()
     this._createForm();
     console.log(this.postMessage)
-    this.authService.login().subscribe(res => {
-      this.token = res.access
-    })
   }
 
   private _initControlNames() {
@@ -63,21 +60,23 @@ export class CongressoComponent implements OnInit {
   }
 
   submit(formValue: any) {
+    this.authService.login().subscribe(res => {
+      this.token = res.access
+      this.congressoService.postArtigo(formValue, this.file, this.token).subscribe(
+      res => {
+        this.postMessage = res
+        this.success = true
+      },
+      err => {
+        this.postMessage.message = 'Algo deu errado. Tente novamente.'
+        this.success = false
+      }
+      )
+    })
+}
 
-    this.congressoService.postArtigo(formValue, this.file, this.token).subscribe(
-    res => {
-      this.postMessage = res
-      this.success = true
-    },
-    err => {
-      this.postMessage.message = 'Algo deu errado. Tente novamente.'
-      this.success = false
-    }
-    )
- }
-
- onChangeFile(event: any) {
+onChangeFile(event: any) {
   this.file = event.srcElement.files[0]
- }
+}
 
 }
