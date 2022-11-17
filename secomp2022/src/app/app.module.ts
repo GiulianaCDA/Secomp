@@ -13,6 +13,7 @@ import { SecompInputComponent } from './components/secomp-input/secomp-input.com
 import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
 import { CongressoComponent } from './pages/congresso/congresso.component';
 import { MaratonaComponent } from './pages/maratona/maratona.component';
+import { MinicursosComponent } from './pages/minicursos/minicursos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaratonaComponent } from './pages/maratona/maratona.component';
     SecompInputComponent,
     InscricoesComponent,
     CongressoComponent,
-    MaratonaComponent
+    MaratonaComponent,
+    MinicursosComponent
   ],
   imports: [
     BrowserModule,
