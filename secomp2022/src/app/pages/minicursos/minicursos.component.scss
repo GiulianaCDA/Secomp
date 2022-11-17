@@ -21,3 +21,14 @@
     width: 18rem;
     background-color: #742ece;
 }
+
+@media (max-width: 768px)
+{
+    .minicurso-card {
+        margin-top: 3rem;
+    }
+
+    .col-sm {
+        padding: 0;
+    }
+}
