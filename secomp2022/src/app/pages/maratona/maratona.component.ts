@@ -33,9 +33,6 @@ export class MaratonaComponent implements OnInit {
   ngOnInit(): void {
     this._initControlNames()
     this._createForm();
-    this.authService.login().subscribe(res => {
-      this.token = res.access
-    })
   }
 
   private _initControlNames() {
@@ -62,16 +59,19 @@ export class MaratonaComponent implements OnInit {
   }
 
   submit(formValue: any) {
-    this.maratonaService.postTimeMaratona(formValue, this.token).subscribe(
-    res => {
-      this.postMessage = res
-      this.success = true
-    },
-    err => {
-      this.postMessage.message = 'Algo deu errado. Tente novamente.'
-      this.success = false
-    }
-    )
- }
+    this.authService.login().subscribe(res => {
+      this.token = res.access
+      this.maratonaService.postTimeMaratona(formValue, this.token).subscribe(
+      res => {
+        this.postMessage = res
+        this.success = true
+      },
+      err => {
+        this.postMessage.message = 'Algo deu errado. Tente novamente.'
+        this.success = false
+      }
+      )
+    })
+}
 
 }
