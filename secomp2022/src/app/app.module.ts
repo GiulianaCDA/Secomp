@@ -14,6 +14,7 @@ import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
 import { CongressoComponent } from './pages/congresso/congresso.component';
 import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { MinicursosComponent } from './pages/minicursos/minicursos.component';
+import { XadrezComponent } from './pages/xadrez/xadrez.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MinicursosComponent } from './pages/minicursos/minicursos.component';
     InscricoesComponent,
     CongressoComponent,
     MaratonaComponent,
-    MinicursosComponent
+    MinicursosComponent,
+    XadrezComponent
   ],
   imports: [
     BrowserModule,
