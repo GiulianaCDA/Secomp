@@ -8,13 +8,12 @@ import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { XadrezComponent } from './pages/xadrez/xadrez.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'inscricao', component: InscricoesComponent },
-  { path: 'congresso', component: CongressoComponent },
-  { path: 'minicursos', component: MinicursosComponent },
-  { path: 'campeonato', component: HomeComponent },
-  { path: 'maratona', component: MaratonaComponent},
-  { path: 'xadrez', component: XadrezComponent}
+  { path: '', component: HomeComponent }
+  //{ path: 'inscricao', component: InscricoesComponent },
+  //{ path: 'congresso', component: CongressoComponent },
+  //{ path: 'minicursos', component: MinicursosComponent },
+  //{ path: 'maratona', component: MaratonaComponent},
+  //{ path: 'xadrez', component: XadrezComponent}
 ];
 
 @NgModule({
