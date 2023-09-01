@@ -7,6 +7,7 @@ import { Voluntario, ArtigoInfo, TimeMaratona } from 'src/app/interfaces';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SecompAPIService {
   private url: string = environment.apiUrl
 
@@ -15,6 +16,16 @@ export class SecompAPIService {
     private authService: AuthService,
   ) { }
 
+  getFormUrl(formId: Number, token: any){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token });
+
+    let options = { headers: headers };
+
+    return this.http.get<FormUrl>(`${this.url}/subscribe/form/${formId}/`, options)
+  }
+  
   postVoluntario(data: Voluntario, token: any){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -50,4 +61,7 @@ export class SecompAPIService {
     console.log(data)
     return this.http.post(`${this.url}/subscribe/maratona/`, data, options)
   }
+}
+interface FormUrl {
+  url: string
 }
