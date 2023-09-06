@@ -173,19 +173,11 @@
               >
                 Envio feito com sucesso. Obrigado! 
               </div>
-
-              <div 
-              class="alert alert-success text-center mt-4" 
-              role="alert"
-              *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
-              >
-                Envio feito com sucesso. Obrigado! 
-              </div>
               
               <div 
               class="alert alert-danger text-center mt-4" 
               role="alert"
-              *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+              *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.' || postMessage.message ==  'Este nome de equipe já existe. Tente outro.'"
               >
                 {{ postMessage.message }}
               </div>
@@ -338,7 +330,7 @@
         <div 
         class="alert alert-success text-center mt-4" 
         role="alert"
-        *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+        *ngIf="success"
         >
           Envio feito com sucesso. Obrigado! 
         </div>
@@ -346,11 +338,12 @@
         <div 
         class="alert alert-danger text-center mt-4" 
         role="alert"
-        *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.'"
+        *ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.' || postMessage.message ==  'Este nome de equipe já existe. Tente outro.'"
         >
           {{ postMessage.message }}
         </div>
       </div>
   </div>
   </div>
+<div className="spacing">&nbsp;</div>
 <app-footer></app-footer>

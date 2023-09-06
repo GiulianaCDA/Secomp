@@ -57,8 +57,7 @@ export class SecompAPIService {
       'Authorization': 'Bearer ' + token });
 
     let options = { headers: headers };
-    console.log('Aqui embaixo')
-    console.log(data)
+
     return this.http.post(`${this.url}/subscribe/maratona/`, data, options)
   }
 }

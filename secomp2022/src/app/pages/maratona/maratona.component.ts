@@ -76,7 +76,7 @@ export class MaratonaComponent implements OnInit {
       },
       err => {
         if (err.status == 400) {
-          this.postMessage.message = 'Duplicata'
+          this.postMessage.message = 'Este nome de equipe já existe. Tente outro.'
         }
         else {
           this.postMessage.message = 'Algo deu errado. Tente novamente.'
