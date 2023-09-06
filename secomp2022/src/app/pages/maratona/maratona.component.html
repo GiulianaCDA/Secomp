@@ -16,7 +16,7 @@
               - Ter vontade de resolver problemas programando!
             </p>
             <p>
-              A maratona irá acontecer durante a SECOMP, na quarta feira (23/11), de 9 da manhã até o meio dia.
+              A maratona irá acontecer durante a SECOMP.
               Todos são bem-vindos para participar, independente do nível de experiência. Será realizada em um
               dos laboratórios do Instituto de Computação por meio da plataforma TheHuxley.
             </p>
@@ -54,7 +54,7 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Nome do líder: '"
+                    [label]="'*Nome do membro 1: '"
                     controlName="nome_lider"
                     required
                   >
@@ -71,7 +71,7 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*E-mail: '"
+                    [label]="'*E-mail do membro 1: '"
                     controlName="email"
                     required
                   >
@@ -85,18 +85,18 @@
                   </div>
                 </div>
   
-                <div class="col-md-6 mb-2">
+                <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Número de telefone do líder: '"
-                    controlName="numero"
+                    [label]="'*Instituição do membro 1: '"
+                    controlName="instituicao"
                     required
   
                   >
                   </secomp-input>
                   <div
-                  *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
-                  formGroup.controls['numero'].touched)"
+                  *ngIf="formGroup.controls['instituicao'].invalid && (formGroup.controls['instituicao'].dirty ||
+                  formGroup.controls['instituicao'].touched)"
                   class="invalid-feedback d-block"
                   >
                   Campo obrigatório
@@ -106,7 +106,7 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Nome do segundo membro da equipe: '"
+                    [label]="'Nome do membro 2: '"
                     controlName="nome2"
                   >
                   </secomp-input>
@@ -115,12 +115,49 @@
                 <div class="col-md-12 mb-2">
                   <secomp-input
                     [formGroup]="formGroup"
-                    [label]="'*Nome do terceiro membro da equipe: '"
+                    [label]="'E-mail do membro 2: '"
+                    controlName="email2"
+                  >
+                  </secomp-input>
+                </div>
+  
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'Instituição do membro 2: '"
+                    controlName="instituicao2"
+  
+                  >
+                  </secomp-input>
+                </div>
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'Nome do membro 3: '"
                     controlName="nome3"
                   >
                   </secomp-input>
                 </div>
 
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'E-mail do membro 3: '"
+                    controlName="email3"
+                  >
+                  </secomp-input>
+                </div>
+  
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'Instituição do membro 3: '"
+                    controlName="instituicao3"
+  
+                  >
+                  </secomp-input>
+                </div>
+                
                 <button
                 type="submit"
                 class="btn bg-green w-100 text-white mt-4 material-button"
@@ -129,6 +166,14 @@
               >Enviar
               </button>
               </form>
+              <div 
+              class="alert alert-success text-center mt-4" 
+              role="alert"
+              *ngIf="postMessage.message ==  'Formulário enviado com sucesso'"
+              >
+                Envio feito com sucesso. Obrigado! 
+              </div>
+
               <div 
               class="alert alert-success text-center mt-4" 
               role="alert"
@@ -158,22 +203,22 @@
       <div class="card-body">
         <form class="form-horizontal" [formGroup]="formGroup" 
         *ngIf="success == false">
-        <div class="col-md-12 mb-2">
-          <secomp-input
-            [formGroup]="formGroup"
-            [label]="'*Nome do Time: '"
-            controlName="nome_equipe"
-            required
-          >
-          </secomp-input>
-          <div
-          *ngIf="formGroup.controls['nome_equipe'].invalid && (formGroup.controls['nome_equipe'].dirty ||
-          formGroup.controls['nome_equipe'].touched)"
-          class="invalid-feedback d-block"
-          >
-          Campo obrigatório
-          </div>
-        </div>
+                <div class="col-md-12 mb-2">
+                  <secomp-input
+                    [formGroup]="formGroup"
+                    [label]="'*Nome do Time: '"
+                    controlName="nome_equipe"
+                    required
+                  >
+                  </secomp-input>
+                  <div
+                  *ngIf="formGroup.controls['nome_equipe'].invalid && (formGroup.controls['nome_equipe'].dirty ||
+                  formGroup.controls['nome_equipe'].touched)"
+                  class="invalid-feedback d-block"
+                  >
+                  Campo obrigatório
+                  </div>
+                </div>
 
         <div class="col-md-12 mb-2">
           <secomp-input
@@ -195,7 +240,7 @@
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*E-mail: '"
+            [label]="'*E-mail do membro 1: '"
             controlName="email"
             required
           >
@@ -212,15 +257,15 @@
         <div class="col-md-6 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*Número de telefone do líder: '"
-            controlName="numero"
+            [label]="'*Instituição do membro 1: '"
+            controlName="instituicao"
             required
 
           >
           </secomp-input>
           <div
-          *ngIf="formGroup.controls['numero'].invalid && (formGroup.controls['numero'].dirty ||
-          formGroup.controls['numero'].touched)"
+          *ngIf="formGroup.controls['instituicao'].invalid && (formGroup.controls['instituicao'].dirty ||
+          formGroup.controls['instituicao'].touched)"
           class="invalid-feedback d-block"
           >
           Campo obrigatório
@@ -230,7 +275,7 @@
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*Nome do segundo membro da equipe: '"
+            [label]="'Nome do membro 2: '"
             controlName="nome2"
           >
           </secomp-input>
@@ -239,8 +284,45 @@
         <div class="col-md-12 mb-2">
           <secomp-input
             [formGroup]="formGroup"
-            [label]="'*Nome do terceiro membro da equipe: '"
+            [label]="'E-mail do membro 2: '"
+            controlName="email2"
+          >
+          </secomp-input>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'Instituição do membro 2: '"
+            controlName="instituicao2"
+
+          >
+          </secomp-input>
+        </div>
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'Nome do membro 3: '"
             controlName="nome3"
+          >
+          </secomp-input>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'E-mail do membro 3: '"
+            controlName="email3"
+          >
+          </secomp-input>
+        </div>
+
+        <div class="col-md-12 mb-2">
+          <secomp-input
+            [formGroup]="formGroup"
+            [label]="'Instituição do membro 3: '"
+            controlName="instituicao3"
+
           >
           </secomp-input>
         </div>
@@ -271,3 +353,4 @@
       </div>
   </div>
   </div>
+<app-footer></app-footer>

@@ -40,9 +40,13 @@ export class MaratonaComponent implements OnInit {
       nome_equipe: 'nome_equipe',
       nome_lider: 'nome_lider',
       email: 'email',
-      numero: 'numero',
+      instituicao: 'instituicao',
       nome2: 'nome2',
-      nome3: 'nome3'
+      instituicao2: 'instituicao2',
+      email2: 'email2',
+      nome3: 'nome3',
+      instituicao3: 'instituicao3',
+      email3: 'email3',
     }
   }
 
@@ -52,9 +56,13 @@ export class MaratonaComponent implements OnInit {
       [tmp.nome_equipe]: new FormControl(null,  Validators.required),
       [tmp.nome_lider]: new FormControl(null,  Validators.required),
       [tmp.email]: new FormControl(null, Validators.required),
-      [tmp.numero]: new FormControl(null,  Validators.required),
+      [tmp.instituicao]: new FormControl(null,  Validators.required),
       [tmp.nome2]: new FormControl(null),
+      [tmp.instituicao2]: new FormControl(null),
+      [tmp.email2]: new FormControl(null),
       [tmp.nome3]: new FormControl(null),
+      [tmp.instituicao3]: new FormControl(null),
+      [tmp.email3]: new FormControl(null),
     })
   }
 
@@ -67,7 +75,12 @@ export class MaratonaComponent implements OnInit {
         this.success = true
       },
       err => {
-        this.postMessage.message = 'Algo deu errado. Tente novamente.'
+        if (err.status == 400) {
+          this.postMessage.message = 'Duplicata'
+        }
+        else {
+          this.postMessage.message = 'Algo deu errado. Tente novamente.'
+        }
         this.success = false
       }
       )

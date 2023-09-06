@@ -5,7 +5,7 @@ import { MinicursosComponent } from './pages/minicursos/minicursos.component';
 import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
 import { CongressoComponent } from './pages/congresso/congresso.component';
 import { QrformComponent } from './pages/qrform/qrform.component';
-import { XadrezComponent } from './pages/xadrez/xadrez.component';
+import { MaratonaComponent } from './pages/maratona/maratona.component';
 
 
 function palestraRouteMatcher(url: UrlSegment[]) {
@@ -23,10 +23,10 @@ function palestraRouteMatcher(url: UrlSegment[]) {
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { matcher: palestraRouteMatcher, component: QrformComponent },
+  { path: 'maratona', component: MaratonaComponent},
   //{ path: 'inscricao', component: InscricoesComponent },
   //{ path: 'congresso', component: CongressoComponent },
   //{ path: 'minicursos', component: MinicursosComponent },
-  //{ path: 'maratona', component: MaratonaComponent},
   //{ path: 'xadrez', component: XadrezComponent}
 ];
 

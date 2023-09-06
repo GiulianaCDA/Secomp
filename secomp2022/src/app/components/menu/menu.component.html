@@ -22,11 +22,23 @@
             class="nav-link text-white" 
             routerLink="/">Início</a>
           </li>
-          <!--
-            <li 
+          <li 
             class="nav-item px-2"
-            [ngClass]="{'nav-item-active': page === '/minicursos'}"
-            >
+            [ngClass]="{
+              'nav-item-active': page === '/maratona'
+            }"
+              >
+              <a 
+              class="nav-link text-white" 
+              routerLink="/maratona"
+              >Maratona
+            </a>
+          </li>
+        <!--
+          <li 
+          class="nav-item px-2"
+          [ngClass]="{'nav-item-active': page === '/minicursos'}"
+          >
               <a 
               class="nav-link text-white" 
               routerLink="/minicursos">Minicursos</a>
@@ -45,18 +57,6 @@
               </a>
             </li>
   
-            <li 
-            class="nav-item px-2"
-            [ngClass]="{
-              'nav-item-active': page === '/maratona'
-            }"
-            >
-              <a 
-              class="nav-link text-white" 
-              routerLink="/maratona"
-              >Maratona
-              </a>
-            </li>
   
             <li 
             class="nav-item px-2"
