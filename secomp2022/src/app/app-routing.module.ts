@@ -12,8 +12,8 @@ function palestraRouteMatcher(url: UrlSegment[]) {
   const urlPath = url[0].path.split('-');
 
   if (urlPath.length === 2 && urlPath[0] === 'palestra') {
-    const id = parseInt(urlPath[1]);
-    if (!isNaN(id)) {
+    const id = urlPath[1];
+    if (id) {
       return { consumed: url };
     }
   }

@@ -12,7 +12,7 @@ import { SecompAPIService } from '../../secompAPI.service';
 })
 
 export class QrformComponent implements OnInit {
-  formId: Number = 0
+  formId: Number | string = 0
   token!: string
 
   constructor(
@@ -23,20 +23,18 @@ export class QrformComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formId = +this.route.snapshot.url[0].path.split('-')[1];
+    this.formId = this.route.snapshot.url[0].path.split('-')[1];
     this.authService.login().subscribe(res => {
       this.token = res.access
     })
     this.qrformService.getFormUrl(this.formId, this.token).subscribe(
       res => {
-        console.log(res.url)
         window.location.href = res.url
       },
       err => {
         this.router.navigate(['/'])
       }
     )
-    //window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfLfHZ6iKjJu8ndhPJn74i0NGM9yV4tnlQuWQYT2JQHOv1I1Q/viewform'
   }
 
 }

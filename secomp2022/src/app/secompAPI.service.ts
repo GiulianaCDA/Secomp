@@ -16,7 +16,7 @@ export class SecompAPIService {
     private authService: AuthService,
   ) { }
 
-  getFormUrl(formId: Number, token: any){
+  getFormUrl(formId: Number | string, token: any){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token });
