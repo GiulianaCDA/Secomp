@@ -1,0 +1,132 @@
+<app-menu></app-menu>
+<div class="spacing">
+	<div class="row">
+		<div class="col-md-6 texto-voluntarios">
+			<h1 class="card-title text-purple">Inscrição para a SECOMP 2024</h1>
+			<p>Participe da Semana da Computação da UFAL e mergulhe em 3 dias de palestras, minicursos, competições e
+				muito mais! <br> O evento é gratuito e aberto a todos.
+			</p>
+			<p style="margin-bottom: .5rem;"><strong> Alguns dos destaques incluem: </strong></p>
+			<ul>
+				<li>
+					<strong>Maratona de Programação: </strong>
+					Teste suas habilidades em equipe na plataforma TheHuxley. Equipes de até 3 participantes.
+				</li>
+				<li>
+					<strong>Minicursos e Palestras: </strong>
+					Aprenda com especialistas sobre as tendências mais atuais da tecnologia.
+				</li>
+				<li>
+					<strong>Jogos e Rodas de Conversa: </strong>
+					Momentos de interação e networking.
+				</li>
+			</ul>
+			<p>
+				📅 Data: 6 a 8 de novembro <br>
+				📍 Local: Instituto de Computação, UFAL
+			</p>
+
+			<p>Garanta já sua vaga!</p>
+		</div>
+
+		<div class="col-md-6">
+			<div class="card form-voluntarios">
+				<div class="card-header text-center p-2">
+					Participação - SECOMP 2024
+				</div>
+
+				<div class="card-body">
+					<form class="form-horizontal" [formGroup]="formGroup" *ngIf="success == false">
+						<div class="col-md-12 mb-2">
+							<secomp-input [formGroup]="formGroup" [label]="'Nome: *'" controlName="nome" required>
+							</secomp-input>
+							<div *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
+                  formGroup.controls['nome'].touched)" class="invalid-feedback d-block">
+								Campo obrigatório
+							</div>
+						</div>
+
+						<div class="col-md-12 mb-2">
+							<secomp-input [formGroup]="formGroup" [label]="'Email: *'" controlName="email" required>
+							</secomp-input>
+							<div *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty ||
+                  formGroup.controls['email'].touched)" class="invalid-feedback d-block">
+								Campo obrigatório
+							</div>
+						</div>
+
+						<div class="col-md-12 mb-2">
+							<secomp-input [formGroup]="formGroup" [label]="'Instituição: '" controlName="instituicao">
+							</secomp-input>
+						</div>
+
+						<button type="submit" class="btn bg-green w-100 text-white mt-4 material-button"
+							(click)="submit(formGroup.value)" [disabled]="!formGroup.valid">Enviar
+						</button>
+					</form>
+					<div class="alert alert-success text-center mt-4" role="alert"
+						*ngIf="postMessage.message ==  'Formulário enviado com sucesso'">
+						Envio feito com sucesso. Obrigado!
+					</div>
+
+					<div class="alert alert-danger text-center mt-4" role="alert"
+						*ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.' || postMessage.message ==  'Este nome de equipe já existe. Tente outro.'">
+						{{ postMessage.message }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-form">
+	<div class="card form-voluntarios-mobile">
+		<div class="card-header text-center p-8">
+			Formulário - <br> SECOMP 2024
+		</div>
+		<div class="card-body">
+			<form class="form-horizontal" [formGroup]="formGroup" *ngIf="success == false">
+				<div class="col-md-12 mb-2">
+					<secomp-input [formGroup]="formGroup" [label]="'Nome Completo: *'" controlName="nome" required>
+					</secomp-input>
+					<div *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
+                  formGroup.controls['nome'].touched)" class="invalid-feedback d-block">
+						Campo obrigatório
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-2">
+					<secomp-input [formGroup]="formGroup" [label]="'*E-mail: *'" controlName="email" required>
+					</secomp-input>
+					<div *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty ||
+          formGroup.controls['email'].touched)" class="invalid-feedback d-block">
+						Campo obrigatório
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-2">
+					<secomp-input [formGroup]="formGroup" [label]="'Instituição: '" controlName="instituicao" required>
+					</secomp-input>
+					<div *ngIf="formGroup.controls['instituicao'].invalid && (formGroup.controls['instituicao'].dirty ||
+          formGroup.controls['instituicao'].touched)" class="invalid-feedback d-block">
+						Campo obrigatório
+					</div>
+				</div>
+
+				<button type="submit" class="btn bg-green w-100 text-white mt-4 material-button"
+					(click)="submit(formGroup.value)" [disabled]="!formGroup.valid">Enviar
+				</button>
+			</form>
+			<div class="alert alert-success text-center mt-4" role="alert" *ngIf="success">
+				Envio feito com sucesso. Obrigado!
+			</div>
+
+			<div class="alert alert-danger text-center mt-4" role="alert"
+				*ngIf="postMessage.message ==  'Algo deu errado. Tente novamente.' || postMessage.message ==  'Este nome de equipe já existe. Tente outro.'">
+				{{ postMessage.message }}
+			</div>
+		</div>
+	</div>
+</div>
+<div className="spacing">&nbsp;</div>
+<app-footer></app-footer>

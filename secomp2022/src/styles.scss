@@ -71,10 +71,6 @@ body {
     padding: 2em // teste;
 }
 
-.spacing-lg {
-    padding: 4em;
-}
-
 .btn-yellow {
     background-color: #ffbb08;
     border-color: #ffbb08;
@@ -128,4 +124,10 @@ body {
 .invalid-feedback {
     font-size: 0.8em;
     margin-top: -1em;
+}
+
+@media (min-width: 768px) {
+    .spacing {
+        padding: 4em;
+    }
 }

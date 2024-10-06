@@ -10,7 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { QrformComponent } from './pages/qrform/qrform.component';
 import { SecompInputComponent } from './components/secomp-input/secomp-input.component';
-import { InscricoesComponent } from './pages/inscricoes/inscricoes.component';
+import { InscricaoComponent } from './pages/inscricao/inscricao.component';
 import { CongressoComponent } from './pages/congresso/congresso.component';
 import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { MinicursosComponent } from './pages/minicursos/minicursos.component';
@@ -24,7 +24,7 @@ import { XadrezComponent } from './pages/xadrez/xadrez.component';
     FooterComponent,
     QrformComponent,
     SecompInputComponent,
-    InscricoesComponent,
+    InscricaoComponent,
     CongressoComponent,
     MaratonaComponent,
     MinicursosComponent,

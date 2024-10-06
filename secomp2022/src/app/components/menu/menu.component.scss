@@ -17,6 +17,10 @@
     border-bottom: solid 2px #66C0A1;
 }
 
+.navbar-nav {
+    gap: 1rem;
+}
+
 @media (min-width: 768px) {
     .menu {
         padding: 0.7em 4em 0.7em 4em;
