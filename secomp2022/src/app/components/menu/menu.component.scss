@@ -9,6 +9,10 @@
     left: 0;
 }
 
+#mobile-menu {
+    justify-content: flex-end;
+}
+
 .menu li a:hover {
     color: #66C0A1 !important;
 }

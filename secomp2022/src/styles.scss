@@ -1,5 +1,15 @@
 :root {
     --text-yellow: #ffbb08;
+    /* GAMBIARRA: Necessário descobrir o porquê das CSS Variables do Bootstrap para o botão desativado não estão funcionando */
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #a4a4a4;
+    --bs-btn-hover-bg: #5B15B6;
+}
+
+.form-control:focus {
+    /* Também é uma certa GAMBIARRA, mesmo que eu não tenha encontrado nada oficial pra customizar isso aqui */
+    border-color: #66C0A1;
+    box-shadow: 0 0 0 0.25rem rgba(102, 192, 161, 0.25);
 }
 
 body {

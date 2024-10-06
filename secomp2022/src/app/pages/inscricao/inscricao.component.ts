@@ -13,8 +13,9 @@ export class InscricaoComponent implements OnInit {
 	formGroup!: UntypedFormGroup
 	controlNames!: { [key: string]: string }
 	postMessage: any = {
-		message: ' '
+		message: ''
 	}
+	isLoading = false
 	token!: string
 	success = false;
 	validNomeField: boolean = true
@@ -55,19 +56,37 @@ export class InscricaoComponent implements OnInit {
 	submit(formValue: any) {
 		this.authService.login().subscribe(res => {
 			this.token = res.access
+			this.isLoading = true
+			console.log(this.isLoading)
+
 			this.inscricaoService.postParticipant(formValue, this.token).subscribe(
-				res => {
-					this.postMessage = res
-					this.success = true
-				},
-				err => {
-					if (err.status == 400) {
-						this.postMessage.message = 'Este e-mail já foi cadastrado.'
+				{
+					next: (res) => {
+						this.postMessage = res
+						this.success = true
+						this.isLoading = false
+					},
+					error: (err) => {
+						console.log(err)
+
+						this.valid = false
+
+						if (err.error.nome) {
+							this.validNomeField = false
+							this.postMessage.message = 'O nome inserido é inválido.'
+						}
+						if (err.error.email) {
+							this.validEmailField = false
+							this.postMessage.message = 'O e-mail inserido é inválido.'
+						}
+
+						if (this.validEmailField && this.validNomeField) {
+							this.postMessage.message = 'Algo deu errado. Tente novamente.'
+						}
+
+						this.success = false
+						this.isLoading = false
 					}
-					else {
-						this.postMessage.message = 'Algo deu errado. Tente novamente.'
-					}
-					this.success = false
 				}
 			)
 		})

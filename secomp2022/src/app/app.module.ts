@@ -15,8 +15,10 @@ import { CongressoComponent } from './pages/congresso/congresso.component';
 import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { MinicursosComponent } from './pages/minicursos/minicursos.component';
 import { XadrezComponent } from './pages/xadrez/xadrez.component';
+import { _404Component } from './pages/_404/_404.component';
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppComponent,
         HomeComponent,
         MenuComponent,
@@ -27,10 +29,12 @@ import { XadrezComponent } from './pages/xadrez/xadrez.component';
         CongressoComponent,
         MaratonaComponent,
         MinicursosComponent,
-        XadrezComponent
+        XadrezComponent,
+        _404Component
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule { }

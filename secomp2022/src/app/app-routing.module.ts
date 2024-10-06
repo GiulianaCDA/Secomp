@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { InscricaoComponent } from './pages/inscricao/inscricao.component';
 import { QrformComponent } from './pages/qrform/qrform.component';
 import { MaratonaComponent } from './pages/maratona/maratona.component';
+import { _404Component } from './pages/_404/_404.component';
 
 
 function palestraRouteMatcher(url: UrlSegment[]) {
@@ -23,6 +24,7 @@ const routes: Routes = [
   { matcher: palestraRouteMatcher, component: QrformComponent },
   { path: 'maratona', component: MaratonaComponent },
   { path: 'inscricao', component: InscricaoComponent },
+  { path: '**', component: _404Component }
 ];
 
 @NgModule({
