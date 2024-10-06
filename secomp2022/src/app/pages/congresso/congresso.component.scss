@@ -1,10 +1,10 @@
-.card-title{
+.card-title {
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 3rem;
 }
 
-.spacing{
+.spacing {
     margin-top: 5rem;
 }
 
@@ -12,12 +12,12 @@
     display: none;
 }
 
-.form-voluntarios{
+.form-voluntarios {
     padding: 25px;
     box-shadow: 0.1em 0.2em 1em #d7d7d79e;
 }
 
-.card-header{
+.card-header {
     border: none;
     background: none;
     font-size: 1.2em;
@@ -25,12 +25,11 @@
     font-weight: 600;
 }
 
-.texto-voluntarios{
+.texto-voluntarios {
     font-size: .95em;
 }
 
-@media (max-width: 768px)
-{
+@media (max-width: 768px) {
     .form-voluntarios {
         display: none;
     }
@@ -40,7 +39,7 @@
         box-shadow: 0.1em 0.2em 1em #d7d7d79e;
         width: 90%;
         margin-left: 5%;
-        margin-bottom: 4em;
+        margin-bottom: 2em // teste;
     }
 
     .mobile-form {
@@ -48,6 +47,6 @@
     }
 
     .spacing {
-        padding: 4em;
+        padding: 2em // teste;
     }
 }

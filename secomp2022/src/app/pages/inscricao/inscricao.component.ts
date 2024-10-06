@@ -5,11 +5,11 @@ import { AuthService } from 'src/app/auth.service';
 import { SecompAPIService } from '../../secompAPI.service';
 
 @Component({
-	selector: 'app-maratona',
-	templateUrl: './maratona.component.html',
-	styleUrls: ['./maratona.component.scss']
+	selector: 'app-inscricao',
+	templateUrl: './inscricao.component.html',
+	styleUrls: ['./inscricao.component.scss']
 })
-export class MaratonaComponent implements OnInit {
+export class InscricaoComponent implements OnInit {
 	formGroup!: FormGroup
 	controlNames!: { [key: string]: string }
 	postMessage: any = {
@@ -27,7 +27,7 @@ export class MaratonaComponent implements OnInit {
 		private router: Router,
 		private route: ActivatedRoute,
 		private authService: AuthService,
-		private maratonaService: SecompAPIService,
+		private inscricaoService: SecompAPIService,
 	) { }
 
 	ngOnInit(): void {
@@ -37,46 +37,32 @@ export class MaratonaComponent implements OnInit {
 
 	private _initControlNames() {
 		this.controlNames = {
-			nome_equipe: 'nome_equipe',
-			nome_lider: 'nome_lider',
+			nome: 'nome',
 			email: 'email',
 			instituicao: 'instituicao',
-			nome2: 'nome2',
-			instituicao2: 'instituicao2',
-			email2: 'email2',
-			nome3: 'nome3',
-			instituicao3: 'instituicao3',
-			email3: 'email3',
 		}
 	}
 
 	private _createForm() {
 		const tmp = this.controlNames
 		this.formGroup = new FormGroup({
-			[tmp.nome_equipe]: new FormControl(null, Validators.required),
-			[tmp.nome_lider]: new FormControl(null, Validators.required),
+			[tmp.nome]: new FormControl(null, Validators.required),
 			[tmp.email]: new FormControl(null, Validators.required),
-			[tmp.instituicao]: new FormControl(null, Validators.required),
-			[tmp.nome2]: new FormControl(null),
-			[tmp.instituicao2]: new FormControl(null),
-			[tmp.email2]: new FormControl(null),
-			[tmp.nome3]: new FormControl(null),
-			[tmp.instituicao3]: new FormControl(null),
-			[tmp.email3]: new FormControl(null),
+			[tmp.instituicao]: new FormControl(null),
 		})
 	}
 
 	submit(formValue: any) {
 		this.authService.login().subscribe(res => {
 			this.token = res.access
-			this.maratonaService.postTimeMaratona(formValue, this.token).subscribe(
+			this.inscricaoService.postParticipant(formValue, this.token).subscribe(
 				res => {
 					this.postMessage = res
 					this.success = true
 				},
 				err => {
 					if (err.status == 400) {
-						this.postMessage.message = 'Este nome de equipe já existe. Tente outro.'
+						this.postMessage.message = 'Este e-mail já foi cadastrado.'
 					}
 					else {
 						this.postMessage.message = 'Algo deu errado. Tente novamente.'

@@ -1,19 +1,28 @@
-.menu{
+.menu {
     font-size: .9em !important;
     background: #5b15b6;
-    padding: 0.7em 4em 0.7em 4em;
+    padding: 1.5em 2em;
     font-weight: 600;
-    padding-left: 4em;
-    padding-right: 4em;
     height: auto;
     z-index: 99;
     top: 0;
     left: 0;
 }
 
-.menu li a:hover{
-    color:  #66C0A1!important;
+.menu li a:hover {
+    color: #66C0A1 !important;
 }
-.nav-item-active{
+
+.nav-item-active {
     border-bottom: solid 2px #66C0A1;
+}
+
+.navbar-nav {
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        padding: 0.7em 4em 0.7em 4em;
+    }
 }

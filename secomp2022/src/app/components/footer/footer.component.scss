@@ -1,34 +1,39 @@
-footer{
+footer {
     font-size: .8em;
     color: #fff;
 }
 
-h6{
+h6 {
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
-li{
+li {
     margin-bottom: 5px;
 }
 
-li a{
+li a {
     color: white;
 }
 
-.credits{
+.credits {
     margin: 0;
-    padding: 10px 0 0px 0;
     font-weight: 500;
+    padding-block: 1rem;
 }
 
-@media (max-width: 768px)
-{
-    .footer-img {
-        margin-bottom: 1.2rem;
-    }
+.credits p {
+    margin-bottom: 0px;
+    text-align: center;
+}
 
+.footer-img {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
     .pages {
         display: none;
     }

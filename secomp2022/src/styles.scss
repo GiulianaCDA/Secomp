@@ -1,95 +1,133 @@
-
-:root{
+:root {
     --text-yellow: #ffbb08;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #545454;
     background-color: #f3f3f3;
 }
-.card-title{
+
+.page {
+    position: relative;
+}
+
+.material-icons {
+    user-select: none;
+}
+
+.card-title {
     font-family: 'MuseoModerno';
 }
-.bg-purple{
+
+.bg-purple {
     background-color: #5B15B6;
 }
-.bg-pink{
+
+.bg-pink {
     background-color: #FF7E83;
 }
-.bg-yellow{
+
+.bg-yellow {
     background-color: #ffbb08;
 }
-.bg-blue{
+
+.bg-blue {
     background-color: #1156bb;
 }
-.bg-green{
+
+.bg-green {
     background-color: #66C0A1;
 }
-.text-yellow{
+
+.text-yellow {
     color: #ffbb08;
 }
-.text-purple{
+
+.text-purple {
     color: #5B15B6;
 }
-.text-blue{
+
+.text-blue {
     color: #1156bb;
 }
-.text-pink{
+
+.text-pink {
     color: #FF7E83;
 }
-.text-green{
-    color: #66C0A1;;
+
+.text-green {
+    color: #66C0A1;
+    ;
 }
-.header-title{
+
+.header-title {
     font-weight: 800;
     font-size: 3em;
 }
 
-.spacing{
-    padding: 4em;
+.spacing {
+    padding: 2em // teste;
 }
 
-.btn-yellow{
+.btn-yellow {
     background-color: #ffbb08;
     border-color: #ffbb08;
 }
-.btn-yellow:hover{
+
+.btn-yellow:hover {
     background-color: #e9a901;
     border-color: #e9a901;
 }
 
-.btn-white{
+.btn {
+    padding-inline: 1.25rem;
+    padding-block: 0.55rem;
+}
+
+.btn-white {
     background-color: #fff;
     border-color: #ffff;
     color: #5b15b5;
 }
-.btn-pink{
+
+.btn-white:hover {
+    background-color: #66C0A1;
+    color: #fff;
+}
+
+.btn-pink {
     background-color: #FF7E83;
     border-color: #FF7E83;
 }
 
-.btn-purple{
+.btn-purple {
     background-color: #5B15B6;
     border-color: #5B15B6;
 }
 
-.btn-green{
+.btn-green {
     background-color: #66C0A1;
     border-color: #66C0A1
 }
 
-.btn-green:hover{
+.btn-green:hover {
     background-color: #5B15B6;
     border-color: #5B15B6;
 }
 
-.card{
+.card {
     border: none;
 }
 
-.invalid-feedback{
+.invalid-feedback {
     font-size: 0.8em;
     margin-top: -1em;
+}
+
+@media (min-width: 768px) {
+    .spacing {
+        padding: 4em;
+    }
 }
