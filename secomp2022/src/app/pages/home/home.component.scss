@@ -20,12 +20,24 @@
     padding-bottom: 10rem;
     position: relative;
     overflow: hidden;
-    filter: brightness(0.85);
+    z-index: -2;
+}
+
+.header-homepage .inverse-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.55;
+    background: radial-gradient(50% 50% at 50% 50%, #5B15B5 0%, rgba(91, 21, 181, 0.50) 48%, rgba(34, 190, 160, 0.00) 100%);
 }
 
 .header-homepage-card {
     margin-top: 5em;
     width: 50%;
+    z-index: 2;
 }
 
 .header-title {
