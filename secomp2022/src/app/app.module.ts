@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,28 +16,21 @@ import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { MinicursosComponent } from './pages/minicursos/minicursos.component';
 import { XadrezComponent } from './pages/xadrez/xadrez.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    MenuComponent,
-    FooterComponent,
-    QrformComponent,
-    SecompInputComponent,
-    InscricaoComponent,
-    CongressoComponent,
-    MaratonaComponent,
-    MinicursosComponent,
-    XadrezComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        MenuComponent,
+        FooterComponent,
+        QrformComponent,
+        SecompInputComponent,
+        InscricaoComponent,
+        CongressoComponent,
+        MaratonaComponent,
+        MinicursosComponent,
+        XadrezComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
