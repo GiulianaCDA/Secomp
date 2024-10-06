@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 import { SecompAPIService } from '../../secompAPI.service';
@@ -10,7 +10,7 @@ import { SecompAPIService } from '../../secompAPI.service';
 	styleUrls: ['./inscricao.component.scss']
 })
 export class InscricaoComponent implements OnInit {
-	formGroup!: FormGroup
+	formGroup!: UntypedFormGroup
 	controlNames!: { [key: string]: string }
 	postMessage: any = {
 		message: ' '
@@ -23,7 +23,7 @@ export class InscricaoComponent implements OnInit {
 
 	valid = true
 	constructor(
-		private formBuilder: FormBuilder,
+		private formBuilder: UntypedFormBuilder,
 		private router: Router,
 		private route: ActivatedRoute,
 		private authService: AuthService,
@@ -45,10 +45,10 @@ export class InscricaoComponent implements OnInit {
 
 	private _createForm() {
 		const tmp = this.controlNames
-		this.formGroup = new FormGroup({
-			[tmp.nome]: new FormControl(null, Validators.required),
-			[tmp.email]: new FormControl(null, Validators.required),
-			[tmp.instituicao]: new FormControl(null),
+		this.formGroup = new UntypedFormGroup({
+			[tmp.nome]: new UntypedFormControl(null, Validators.required),
+			[tmp.email]: new UntypedFormControl(null, Validators.required),
+			[tmp.instituicao]: new UntypedFormControl(null),
 		})
 	}
 

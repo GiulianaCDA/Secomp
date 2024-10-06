@@ -1,5 +1,5 @@
 import { Component, OnInit,  Input, } from '@angular/core';
-import { AbstractControl, FormGroup } from '@angular/forms'
+import { AbstractControl, UntypedFormGroup } from '@angular/forms'
 
 @Component({
   selector: 'secomp-input',
@@ -9,7 +9,7 @@ import { AbstractControl, FormGroup } from '@angular/forms'
 export class SecompInputComponent implements OnInit {
   @Input() label!: string
   @Input() controlName!: string 
-  @Input() formGroup!: FormGroup 
+  @Input() formGroup!: UntypedFormGroup 
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 import { SecompAPIService } from '../../secompAPI.service';
@@ -10,7 +10,7 @@ import { SecompAPIService } from '../../secompAPI.service';
 	styleUrls: ['./maratona.component.scss']
 })
 export class MaratonaComponent implements OnInit {
-	formGroup!: FormGroup
+	formGroup!: UntypedFormGroup
 	controlNames!: { [key: string]: string }
 	postMessage: any = {
 		message: ' '
@@ -23,7 +23,7 @@ export class MaratonaComponent implements OnInit {
 
 	valid = true
 	constructor(
-		private formBuilder: FormBuilder,
+		private formBuilder: UntypedFormBuilder,
 		private router: Router,
 		private route: ActivatedRoute,
 		private authService: AuthService,
@@ -52,17 +52,17 @@ export class MaratonaComponent implements OnInit {
 
 	private _createForm() {
 		const tmp = this.controlNames
-		this.formGroup = new FormGroup({
-			[tmp.nome_equipe]: new FormControl(null, Validators.required),
-			[tmp.nome_lider]: new FormControl(null, Validators.required),
-			[tmp.email]: new FormControl(null, Validators.required),
-			[tmp.instituicao]: new FormControl(null, Validators.required),
-			[tmp.nome2]: new FormControl(null),
-			[tmp.instituicao2]: new FormControl(null),
-			[tmp.email2]: new FormControl(null),
-			[tmp.nome3]: new FormControl(null),
-			[tmp.instituicao3]: new FormControl(null),
-			[tmp.email3]: new FormControl(null),
+		this.formGroup = new UntypedFormGroup({
+			[tmp.nome_equipe]: new UntypedFormControl(null, Validators.required),
+			[tmp.nome_lider]: new UntypedFormControl(null, Validators.required),
+			[tmp.email]: new UntypedFormControl(null, Validators.required),
+			[tmp.instituicao]: new UntypedFormControl(null, Validators.required),
+			[tmp.nome2]: new UntypedFormControl(null),
+			[tmp.instituicao2]: new UntypedFormControl(null),
+			[tmp.email2]: new UntypedFormControl(null),
+			[tmp.nome3]: new UntypedFormControl(null),
+			[tmp.instituicao3]: new UntypedFormControl(null),
+			[tmp.email3]: new UntypedFormControl(null),
 		})
 	}
 

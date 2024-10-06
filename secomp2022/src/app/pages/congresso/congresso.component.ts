@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, UntypedFormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router'
 import { AuthService } from 'src/app/auth.service';
 
@@ -12,7 +12,7 @@ import { SecompAPIService } from '../../secompAPI.service';
 })
 export class CongressoComponent implements OnInit {
 
-  formGroup!: FormGroup 
+  formGroup!: UntypedFormGroup 
   controlNames!: { [key: string]: string }
   postMessage: any = {
     message: ' '
@@ -27,7 +27,7 @@ export class CongressoComponent implements OnInit {
   valid = true
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -51,11 +51,11 @@ export class CongressoComponent implements OnInit {
 
   private _createForm() {
     const tmp = this.controlNames
-    this.formGroup = new FormGroup({
-      [tmp.nome]: new FormControl(null,  Validators.required),
-      [tmp.email]: new FormControl(null,  Validators.required),
-      [tmp.numero]: new FormControl(null,  Validators.required),
-      [tmp.artigo]: new FormControl(null,  Validators.required),
+    this.formGroup = new UntypedFormGroup({
+      [tmp.nome]: new UntypedFormControl(null,  Validators.required),
+      [tmp.email]: new UntypedFormControl(null,  Validators.required),
+      [tmp.numero]: new UntypedFormControl(null,  Validators.required),
+      [tmp.artigo]: new UntypedFormControl(null,  Validators.required),
     })
   }
 
