@@ -10,8 +10,13 @@ h6 {
     margin-bottom: 1rem;
 }
 
+ul {
+    gap: 0.5rem;
+}
+
 li {
     margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 li a {
@@ -36,5 +41,9 @@ li a {
 @media (max-width: 768px) {
     .pages {
         display: none;
+    }
+
+    ul {
+        gap: 1rem;
     }
 }

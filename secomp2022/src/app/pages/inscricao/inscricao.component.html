@@ -115,8 +115,8 @@
 					</div>
 				</div>
 
-				<button type="submit" class="btn btn-primary" (click)="submit(formGroup.value)"
-					[disabled]="!formGroup.valid || isLoading">
+				<button type="submit" class="btn bg-green w-100 text-white mt-4 material-button"
+					(click)="submit(formGroup.value)" [disabled]="!formGroup.valid || isLoading">
 					<p style="margin-bottom: 0;" *ngIf="!isLoading">Enviar</p>
 					<span class="spinner-border spinner-border-sm" aria-hidden="true" *ngIf="isLoading"></span>
 				</button>
