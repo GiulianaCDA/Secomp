@@ -20,7 +20,6 @@
     padding-bottom: 10rem;
     position: relative;
     overflow: hidden;
-    z-index: -2;
 }
 
 .header-homepage .inverse-vignette {
@@ -29,15 +28,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    opacity: 0.55;
+    opacity: 0.35;
     background: radial-gradient(50% 50% at 50% 50%, #5B15B5 0%, rgba(91, 21, 181, 0.50) 48%, rgba(34, 190, 160, 0.00) 100%);
 }
 
 .header-homepage-card {
     margin-top: 5em;
     width: 50%;
-    z-index: 2;
+}
+
+.header-homepage-card * {
+    position: relative;
+    z-index: 5;
 }
 
 .header-title {
@@ -53,12 +55,6 @@
     width: 65%;
     margin-top: -6em;
     box-shadow: 0.1em 0.4em 1em #d7d7d75f;
-}
-
-.secomp2019img {
-    width: 85%;
-    border-bottom-left-radius: 4rem;
-    border-top-right-radius: 4rem;
 }
 
 .card-info-title {
