@@ -65,6 +65,13 @@ export class InscricaoComponent implements OnInit {
 						this.postMessage = res
 						this.success = true
 						this.isLoading = false
+
+						const modal = document.getElementById('modal')
+
+						if (modal) {
+							modal.style.display = 'block'
+							modal.classList.add('show')
+						}
 					},
 					error: (err) => {
 						console.log(err)

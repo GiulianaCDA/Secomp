@@ -36,6 +36,15 @@
 				</div>
 
 				<div class="card-body">
+					<div class="alert alert-success text-center mt-4" role="alert"
+						*ngIf="postMessage.message ==  'Formulário enviado com sucesso'">
+						Envio feito com sucesso. Obrigado!
+					</div>
+
+					<div class="alert alert-danger text-center mt-4" role="alert"
+						*ngIf="postMessage.message != '' && success == false">
+						{{ postMessage.message }}
+					</div>
 					<form class="form-horizontal" [formGroup]="formGroup" *ngIf="success == false">
 						<div class="col-md-12 mb-2">
 							<secomp-input [formGroup]="formGroup" [label]="'Nome: *'" controlName="nome" required>
@@ -65,16 +74,14 @@
 							<p style="margin-bottom: 0;" *ngIf="!isLoading">Enviar</p>
 							<span class="spinner-border spinner-border-sm" aria-hidden="true" *ngIf="isLoading"></span>
 						</button>
-					</form>
-					<div class="alert alert-success text-center mt-4" role="alert"
-						*ngIf="postMessage.message ==  'Formulário enviado com sucesso'">
-						Envio feito com sucesso. Obrigado!
-					</div>
 
-					<div class="alert alert-danger text-center mt-4" role="alert"
-						*ngIf="postMessage.message != '' && success == false">
-						{{ postMessage.message }}
-					</div>
+						<p class="disclaimer">
+							Ao enviar este formulário, você concorda em compartilhar seus dados com a LACOMP para a
+							organização
+							da SECOMP, incluindo o envio de e-mails sobre o evento, certificados e outras
+							comunicações relacionadas.
+						</p>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -87,6 +94,14 @@
 			Formulário - <br> SECOMP 2024
 		</div>
 		<div class="card-body">
+			<div class="alert alert-success text-center mt-4" role="alert" *ngIf="success">
+				Envio feito com sucesso. Obrigado!
+			</div>
+
+			<div class="alert alert-danger text-center mt-4" role="alert"
+				*ngIf="!!postMessage.message && success == false">
+				{{ postMessage.message }}
+			</div>
 			<form class="form-horizontal" [formGroup]="formGroup" *ngIf="success == false">
 				<div class="col-md-12 mb-2">
 					<secomp-input [formGroup]="formGroup" [label]="'Nome Completo: *'" controlName="nome" required>
@@ -120,17 +135,34 @@
 					<p style="margin-bottom: 0;" *ngIf="!isLoading">Enviar</p>
 					<span class="spinner-border spinner-border-sm" aria-hidden="true" *ngIf="isLoading"></span>
 				</button>
-			</form>
-			<div class="alert alert-success text-center mt-4" role="alert" *ngIf="success">
-				Envio feito com sucesso. Obrigado!
-			</div>
 
-			<div class="alert alert-danger text-center mt-4" role="alert"
-				*ngIf="!!postMessage.message && success == false">
-				{{ postMessage.message }}
-			</div>
+				<p class="disclaimer">
+					Ao enviar este formulário, você concorda em compartilhar seus dados com a LACOMP para a
+					organização
+					da SECOMP, incluindo o envio de e-mails sobre o evento, certificados e outras
+					comunicações relacionadas.
+				</p>
+			</form>
 		</div>
 	</div>
 </div>
 <div className="spacing">&nbsp;</div>
+
+<div id="modal" class="backdrop">
+	<div class="modal">
+		<img src="assets/images/logo/bg-branco.svg" style="width: 300px;">
+
+		<p class="title">A LACOMP <strong>confirma sua inscrição</strong> na edição de 2024 da SECOMP!</p>
+		<p class="">Marque em sua agenda dos dias <strong>6 a 8 de novembro</strong> e se prepare! <br>
+			Para se manter em dia com todas as notícias e novidades acerca da SECOMP, nos siga no Instagram:</p>
+		<a class="media" href="https://instagram.com/secomp.ufal">
+			<img src="assets/images/insta-icon.svg" style="width: 20px;">
+			&#64;secomp.ufal
+		</a>
+		<a class="btn btn-green text-white" href="/" role="button">
+			Entendido
+		</a>
+	</div>
+</div>
+
 <app-footer></app-footer>

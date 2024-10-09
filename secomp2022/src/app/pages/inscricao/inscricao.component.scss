@@ -25,6 +25,90 @@
     font-size: .95em;
 }
 
+.disclaimer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: .7em;
+    color: #5b15b6;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+
+    opacity: 0;
+    pointer-events: none;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.5s;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+
+    width: 40vw;
+    height: 80vh;
+    gap: 2rem;
+    padding: 1rem 3rem;
+
+    text-align: center;
+
+    background: #fff;
+    box-shadow: 0.1em 0.2em 1em #d7d7d79e;
+    border-radius: 2.4rem;
+
+    transition: all 1s;
+}
+
+.backdrop.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.backdrop.show .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.modal p {
+    margin-bottom: 0px;
+}
+
+.modal .media {
+    color: #22BEA0;
+    text-decoration: none;
+}
+
+.modal .media:hover {
+    text-decoration: underline;
+}
+
+.modal a img {
+    margin-right: 0.25rem;
+}
+
+
+.modal .title {
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .form-voluntarios {
         display: none;
