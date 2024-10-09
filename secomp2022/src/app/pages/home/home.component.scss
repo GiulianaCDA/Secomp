@@ -12,8 +12,18 @@
     align-items: flex-end;
 }
 
+@keyframes backgroundTransition {
+    0% {
+        background-position: initial;
+    }
+    100% {
+        background-position: 40% 50%;
+    }
+}
+
 .header-homepage {
     background-image: url("../../../assets/images/banner6.png");
+    animation: backgroundTransition 30s normal forwards;
     background-position: 0% 20%;
     border-bottom: 6px solid #7ce5c1;
     background-size: cover;

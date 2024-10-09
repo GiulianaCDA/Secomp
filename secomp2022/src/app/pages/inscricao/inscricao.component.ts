@@ -41,6 +41,7 @@ export class InscricaoComponent implements OnInit {
 			nome: 'nome',
 			email: 'email',
 			instituicao: 'instituicao',
+			recurso: 'recurso',
 		}
 	}
 
@@ -50,6 +51,7 @@ export class InscricaoComponent implements OnInit {
 			[tmp.nome]: new UntypedFormControl(null, Validators.required),
 			[tmp.email]: new UntypedFormControl(null, Validators.required),
 			[tmp.instituicao]: new UntypedFormControl(null),
+			[tmp.recurso]: new UntypedFormControl(null),
 		})
 	}
 

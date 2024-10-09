@@ -69,6 +69,11 @@
 							</secomp-input>
 						</div>
 
+						<div class="col-md-12 mb-2">
+							<secomp-input [formGroup]="formGroup" [label]="'Caso você precise de um recurso de acessibilidade, cite-o abaixo: '" controlName="recurso" required>
+							</secomp-input>
+						</div>
+
 						<button type="submit" class="btn bg-green w-100 text-white mt-4 material-button"
 							(click)="submit(formGroup.value)" [disabled]="!formGroup.valid || isLoading == true">
 							<p style="margin-bottom: 0;" *ngIf="!isLoading">Enviar</p>
@@ -104,7 +109,7 @@
 			</div>
 			<form class="form-horizontal" [formGroup]="formGroup" *ngIf="success == false">
 				<div class="col-md-12 mb-2">
-					<secomp-input [formGroup]="formGroup" [label]="'Nome Completo: *'" controlName="nome" required>
+					<secomp-input [formGroup]="formGroup" [label]="'Nome: *'" controlName="nome" required>
 					</secomp-input>
 					<div *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty ||
                   formGroup.controls['nome'].touched)" class="invalid-feedback d-block">
@@ -124,10 +129,11 @@
 				<div class="col-md-12 mb-2">
 					<secomp-input [formGroup]="formGroup" [label]="'Instituição: '" controlName="instituicao" required>
 					</secomp-input>
-					<div *ngIf="formGroup.controls['instituicao'].invalid && (formGroup.controls['instituicao'].dirty ||
-          formGroup.controls['instituicao'].touched)" class="invalid-feedback d-block">
-						Campo obrigatório
-					</div>
+				</div>
+
+				<div class="col-md-12 mb-2">
+					<secomp-input [formGroup]="formGroup" [label]="'Caso você precise de um recurso de acessibilidade, cite-o abaixo: '" controlName="recurso" required>
+					</secomp-input>
 				</div>
 
 				<button type="submit" class="btn bg-green w-100 text-white mt-4 material-button"
@@ -140,7 +146,7 @@
 					Ao enviar este formulário, você concorda em compartilhar seus dados com a LACOMP para a
 					organização
 					da SECOMP, incluindo o envio de e-mails sobre o evento, certificados e outras
-					comunicações relacionadas.
+					comunicações relacionadas.
 				</p>
 			</form>
 		</div>
