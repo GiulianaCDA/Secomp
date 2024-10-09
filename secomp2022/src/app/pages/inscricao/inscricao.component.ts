@@ -84,7 +84,12 @@ export class InscricaoComponent implements OnInit {
 						}
 						if (err.error.email) {
 							this.validEmailField = false
-							this.postMessage.message = 'O e-mail inserido é inválido.'
+
+							if (err.error.email[0] === "participant with this Email already exists.") {
+								this.postMessage.message = 'Você já está inscrito no evento!'
+							} else {
+								this.postMessage.message = 'O email inserido é inválido.'
+							}
 						}
 
 						if (this.validEmailField && this.validNomeField) {
