@@ -107,6 +107,18 @@ body {
     color: #fff;
 }
 
+.btn-white.purple:hover {
+    background-color: #5B15B6;
+}
+
+.btn-white svg path {
+    transition: fill 0.15s;
+}
+
+.btn-white:hover path {
+    fill: #fff;
+}
+
 .btn-pink {
     background-color: #FF7E83;
     border-color: #FF7E83;
