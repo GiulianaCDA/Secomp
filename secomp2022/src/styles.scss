@@ -96,6 +96,10 @@ body {
     padding-block: 0.55rem;
 }
 
+.btn-white.disabled path {
+    fill: #fff;
+}
+
 .btn-white {
     background-color: #fff;
     border-color: #ffff;

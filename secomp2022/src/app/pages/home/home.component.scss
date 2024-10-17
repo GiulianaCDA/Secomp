@@ -231,6 +231,12 @@ section p {
     margin-top: auto;
 }
 
+.event-card a.disabled {
+    pointer-events: none;
+    user-select: none;
+    cursor: not-allowed;
+}
+
 .event-card:last-child {
     background-color: transparent;
     text-align: center;
