@@ -28,7 +28,8 @@
     background-position: 0% 20%;
     border-bottom: 6px solid #7ce5c1;
     background-size: cover;
-    padding-bottom: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 15rem;
     position: relative;
     overflow: hidden;
 }
@@ -156,102 +157,6 @@ section p {
     gap: 1rem;
     justify-content: center;
     align-items: flex-start;
-}
-
-.event-card {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 1rem;
-    border: 1px solid #5B15B5;
-    background-color: #22BEA0;
-
-    overflow: hidden;
-}
-
-.event-card .vignette {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
-    background: radial-gradient(106.01% 70.71% at 50% 50%, rgba(91, 21, 181, 0.00) 0%, rgba(91, 21, 181, 0.65) 100%);
-    z-index: 50;
-}
-
-.event-card .separator {
-    width: 100%;
-    height: 12px;
-    background-color: #5B15B5;
-}
-
-.event-card .header-holder {
-    position: relative;
-    width: 100%;
-}
-
-.event-card img {
-    width: 100%;
-    height: 24rem;
-    object-fit: cover;
-}
-
-.event-card .info {
-    display: flex;
-    padding: 2.25rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-    height: 100%;
-    align-self: stretch;
-}
-
-.event-card h5 {
-    color: var(--default-primary, #5B15B5);
-    font-family: MuseoModerno;
-    font-size: 2.625rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 95%;
-    width: 100%;
-    word-wrap: break-word;
-}
-
-.event-card p {
-    color: #fff;
-}
-
-.event-card a {
-    width: 100%;
-    border: 1px solid #5B15B5;
-    font-weight: bold;
-    margin-top: auto;
-}
-
-.event-card a.disabled {
-    pointer-events: none;
-    user-select: none;
-    cursor: not-allowed;
-}
-
-.event-card:last-child {
-    background-color: transparent;
-    text-align: center;
-    height: 100%;
-    padding-inline: 2rem;
-}
-
-.event-card:last-child .info {
-    align-items: center;
-    justify-content: center;
-}
-
-.event-card:last-child p {
-    color: #22BEA0;
-    margin-bottom: 0px;
 }
 
 @media (max-width: 768px) {

@@ -16,6 +16,7 @@ import { MaratonaComponent } from './pages/maratona/maratona.component';
 import { MinicursosComponent } from './pages/minicursos/minicursos.component';
 import { XadrezComponent } from './pages/xadrez/xadrez.component';
 import { _404Component } from './pages/_404/_404.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { _404Component } from './pages/_404/_404.component';
         MaratonaComponent,
         MinicursosComponent,
         XadrezComponent,
-        _404Component
+        _404Component,
+        EventCardComponent
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,

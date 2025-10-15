@@ -135,7 +135,13 @@ body {
 
 .btn-green {
     background-color: #66C0A1;
-    border-color: #66C0A1
+    border-color: #66C0A1;
+}
+
+.btn.btn-green {
+    font-size: 1em;
+    padding-inline: 1.5em;
+    padding-block: 0.6em;
 }
 
 .btn-green:hover {
